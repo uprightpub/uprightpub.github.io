@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,65 +7,94 @@
 
 <style>
 
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
 body{
 font-family:Arial,Helvetica,sans-serif;
-margin:0;
 background:#f7f7f7;
 color:#333;
 }
 
 header{
 background:#0a3b63;
-color:white;
-padding:20px 40px;
+padding:18px 40px;
 }
 
-header h1{
-margin:0;
+.logo{
+display:flex;
+align-items:center;
+margin-bottom:18px;
 }
 
-.container{
-max-width:1000px;
-margin:60px auto;
-background:white;
-padding:50px;
-border-radius:8px;
-box-shadow:0 5px 15px rgba(0,0,0,.08);
+.logo img{
+height:70px;
+margin-right:16px;
 }
 
-h2{
-color:#0a3b63;
-margin-top:35px;
+.logo h2{
+color:#fff;
+font-size:22px;
 }
 
-p{
-line-height:1.8;
-}
 nav{
-    margin-top:15px;
+display:flex;
+gap:35px;
+flex-wrap:wrap;
 }
 
 nav a{
-    color:white;
-    text-decoration:none;
-    margin-right:25px;
-    font-weight:bold;
+color:#fff;
+text-decoration:none;
+font-weight:bold;
+font-size:18px;
 }
 
 nav a:hover{
-    text-decoration:underline;
+text-decoration:underline;
 }
 
-header h2{
-    margin:0;
-    color:white;
+.page-title{
+text-align:center;
+font-size:48px;
+color:#0a3b63;
+margin:60px 0 40px;
 }
+
+.container{
+max-width:1100px;
+margin:0 auto 80px;
+background:#fff;
+padding:60px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.container h2{
+color:#0a3b63;
+margin-top:35px;
+margin-bottom:15px;
+font-size:34px;
+}
+
+.container h2:first-child{
+margin-top:0;
+}
+
+.container p{
+font-size:19px;
+line-height:1.8;
+}
+
 footer{
-margin-top:60px;
 background:#222;
-color:white;
+color:#fff;
 text-align:center;
 padding:25px;
+font-size:16px;
 }
 
 </style>
@@ -77,35 +105,25 @@ padding:25px;
 
 <header>
 
-<h2>
-    <img src="assets/images/up-logo.png"
-         alt="Upright Publications"
-         style="height:60px; vertical-align:middle; margin-right:12px;">
-    Upright Publications
-</h2>
+<div class="logo">
+<img src="assets/images/up-logo.png" alt="Upright Publications">
+<h2>Upright Publications</h2>
+</div>
 
 <nav>
-
-<a href="#">Home</a>
-
+<a href="index.html">Home</a>
 <a href="#">About</a>
-
 <a href="#">Journals</a>
-
 <a href="editorial-policy.html">Editorial Policy</a>
-
 <a href="#">Ethics</a>
-
 <a href="#">News</a>
-
 <a href="#">Contact</a>
-
 </nav>
 
 </header>
-<h1 style="text-align:center; margin-top:50px; color:#0a3b63;">
-    Editorial Policy
-</h1>
+
+<h1 class="page-title">Editorial Policy</h1>
+
 <div class="container">
 
 <h2>Editorial Independence</h2>
@@ -142,10 +160,9 @@ Where necessary, corrections, expressions of concern, or retractions will be iss
 
 <footer>
 
-© 2026 Upright Publications
+© 2026 Upright Publications. All Rights Reserved.
 
 </footer>
 
 </body>
-
 </html>
