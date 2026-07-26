@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Editorial Board | Technology & Management Review</title>
+
+<link rel="icon" type="image/png" href="tmr-favicon.png">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+font-family:Arial,Helvetica,sans-serif;
+background:#f6f8fb;
+color:#333;
+line-height:1.8;
+
+}
+
+.container{
+
+width:90%;
+max-width:1200px;
+margin:auto;
+
+}
+
+/* ================= HEADER ================= */
+
+header{
+
+background:#083b66;
+color:#fff;
+padding:20px 0;
+box-shadow:0 2px 8px rgba(0,0,0,.15);
+
+}
+
+.header-flex{
+
+display:flex;
+align-items:center;
+justify-content:space-between;
+flex-wrap:wrap;
+
+}
+
+.logo-area{
+
+display:flex;
+align-items:center;
+
+}
+
+.logo-area img{
+
+width:90px;
+margin-right:18px;
+
+}
+
+.logo-area h1{
+
+font-size:32px;
+margin-bottom:6px;
+
+}
+
+.logo-area p{
+
+font-size:15px;
+opacity:.95;
+
+}
+
+.badges{
+
+margin-top:10px;
+
+}
+
+.badges span{
+
+display:inline-block;
+background:#ffffff22;
+padding:6px 12px;
+margin:4px;
+border-radius:20px;
+font-size:13px;
+
+}
+
+/* ================= NAVIGATION ================= */
+
+nav{
+
+margin-top:20px;
+text-align:center;
+
+}
+
+nav a{
+
+display:inline-block;
+padding:12px 18px;
+text-decoration:none;
+color:white;
+font-weight:bold;
+transition:.3s;
+
+}
+
+nav a:hover{
+
+background:#0d5b97;
+border-radius:5px;
+
+}
+
+nav a.active{
+
+background:white;
+color:#083b66;
+border-radius:5px;
+
+}
+
+/* ================= PAGE TITLE ================= */
+
+.page-title{
+
+text-align:center;
+padding:70px 20px 30px;
+
+}
+
+.page-title h2{
+
+font-size:46px;
+color:#083b66;
+margin-bottom:12px;
+
+}
+
+.page-title p{
+
+font-size:20px;
+color:#666;
+
+}
+
+/* ================= SECTION ================= */
+
+.section-title{
+
+font-size:34px;
+color:#083b66;
+margin:50px 0 30px;
+
+}
+
+/* ================= EDITOR CARDS ================= */
+
+.editor-grid{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+gap:25px;
+
+}
+
+.editor-card{
+
+background:white;
+padding:28px;
+border-radius:10px;
+box-shadow:0 4px 12px rgba(0,0,0,.08);
+transition:.3s;
+
+}
+
+.editor-card:hover{
+
+transform:translateY(-5px);
+
+}
+
+.editor-card h3{
+
+color:#083b66;
+font-size:24px;
+margin-bottom:12px;
+
+}
+
+.editor-card p{
+
+margin-bottom:10px;
+font-size:17px;
+
+}
+
+.label{
+
+font-weight:bold;
+color:#083b66;
+
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+
+background:#083b66;
+color:white;
+text-align:center;
+padding:35px;
+margin-top:70px;
+
+}
+
+@media(max-width:768px){
+
+.logo-area{
+
+flex-direction:column;
+text-align:center;
+
+}
+
+.logo-area img{
+
+margin-right:0;
+margin-bottom:15px;
+
+}
+
+.logo-area h1{
+
+font-size:26px;
+
+}
+
+nav a{
+
+display:block;
+
+}
+
+.page-title h2{
+
+font-size:34px;
+
+}
+
+.section-title{
+
+font-size:28px;
+
+}
+
+.editor-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="container">
+
+<div class="header-flex">
+
+<div class="logo-area">
+
+<img src="tmr-logo.png" alt="TMR Logo">
+
+<div>
+
+<h1>Technology & Management Review</h1>
+
+<p>
+
+ISSN (Print): XXXX-XXXX |
+ISSN (Online): XXXX-XXXX
+
+</p>
+
+<div class="badges">
+
+<span>Open Access</span>
+
+<span>Peer Reviewed</span>
+
+<span>Publication at No Cost</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="editorial-board.html" class="active">Editorial Board</a>
+
+<a href="current-issue.html">Current Issue</a>
+
+<a href="archives.html">Archives</a>
+
+<a href="https://uprightpub.github.io/author-guidelines.html"
+target="_blank"
+rel="noopener noreferrer">
+
+Author Guidelines
+
+</a>
+
+<a href="https://uprightpub.github.io/publication-ethics.html"
+target="_blank"
+rel="noopener noreferrer">
+
+Publication Ethics
+
+</a>
+
+<a href="https://uprightpub.github.io/submission.html"
+target="_blank"
+rel="noopener noreferrer">
+
+Manuscript Submission
+
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+<section class="page-title">
+
+<div class="container">
+
+<h2>
+
+Editorial Board
+
+</h2>
+
+<p>
+
+International Editorial Team
+
+</p>
+
+</div>
+
+</section>
+
+<div class="container">
+
+<h2 class="section-title">
+
+Consulting Editors
+
+</h2>
+
+<div class="editor-grid">
+
+<div class="editor-card">
+
+<h3>Prof. Kewen Zhao</h3>
+
+<p>
+<span class="label">Affiliation:</span><br>
+Director, Institute of Applied Mathematics &amp; Information Sciences,
+University of Qiongzhou, China
+</p>
+
+<p>
+<span class="label">Expertise:</span><br>
+Information and Communication Sciences
+</p>
+
+</div>
+
+<div class="editor-card">
+
+<h3>Dr. Gulzar A. Khuwaja</h3>
+
+<p>
+<span class="label">Affiliation:</span><br>
+King Faisal University, Saudi Arabia
+</p>
+
+<p>
+<span class="label">Expertise:</span><br>
+Computer Engineering
+</p>
+
+</div>
+
+<div class="editor-card">
+
+<h3>Md Abul Khair</h3>
+
+<p>
+<span class="label">Affiliation:</span><br>
+Oracle Consulting, Intellectt Inc.,
+Iselin, NJ, USA
+</p>
+
+<p>
+<span class="label">Expertise:</span><br>
+Data Science, Blockchain,
+Business Intelligence,
+Business Analytics
+</p>
+
+</div>
+
+<div class="editor-card">
+
+<h3>Narasimha Rao Boinapalli</h3>
+
+<p>
+<span class="label">Affiliation:</span><br>
+Senior Data Engineer,
+Weisiger Group,
+Charlotte, NC, USA
+</p>
+
+<p>
+<span class="label">Expertise:</span><br>
+Artificial Intelligence,
+Machine Learning,
+Stock Market Trending,
+Market Prediction,
+Business Technology
+</p>
+
+</div>
+
+<div class="editor-card">
+
+<h3>Dr. Vuda Sreenivasarao</h3>
+
+<p>
+<span class="label">Affiliation:</span><br>
+Bahir Dar University,
+Ethiopia
+</p>
+
+<p>
+<span class="label">Expertise:</span><br>
+Electrical Engineering
+</p>
+
+</div>
+
+<div class="editor-card">
+
+<h3>RamMohan Reddy Kundavaram</h3>
+
+<p>
+<span class="label">Affiliation:</span><br>
+Silicon Valley Bank,
+Arizona Tempe, USA
+</p>
+
+<p>
+<span class="label">Expertise:</span><br>
+Data Science,
+Data Visualization,
+AI Ethics
+</p>
+
+</div>
+
+<div class="editor-card">
+
+<h3>Arjun Kamisetty</h3>
+
+<p>
+<span class="label">Affiliation:</span><br>
+Software Developer,
+Fannie Mae,
+Reston, VA, USA
+</p>
+
+<p>
+<span class="label">Expertise:</span><br>
+Software Development,
+Artificial Intelligence,
+Cybersecurity,
+DevOps
+</p>
+
+</div>
+
+<div class="editor-card">
+
+<h3>Dr. Arun Kumar Gupta</h3>
+
+<p>
+<span class="label">Affiliation:</span><br>
+University of Roorkee,
+India
+</p>
+
+<p>
+<span class="label">Expertise:</span><br>
+Computer Programming
+</p>
+
+</div>
+
+<div class="editor-card">
+
+<h3>Engr. Pavan Kumar Gade</h3>
+
+<p>
+<span class="label">Affiliation:</span><br>
+Senior Data Engineer,<br>
+City National Bank,<br>
+Los Angeles, CA, USA
+</p>
+
+<p>
+<span class="label">Expertise:</span><br>
+Android Apps Development
+</p>
+
+</div>
+
+<div class="editor-card">
+
+<h3>Dr. Ho Soon Min</h3>
+
+<p>
+<span class="label">Affiliation:</span><br>
+INTI International University,<br>
+Negeri Sembilan, Malaysia
+</p>
+
+<p>
+<span class="label">Expertise:</span><br>
+Material Science
+</p>
+
+</div>
+
+<div class="editor-card">
+
+<h3>Sridhar Reddy Yerram</h3>
+
+<p>
+<span class="label">Affiliation:</span><br>
+PNC Financial Services,<br>
+Pittsburgh, PA, USA
+</p>
+
+<p>
+<span class="label">Expertise:</span><br>
+Information Technology,<br>
+Business Intelligence,<br>
+Digitization,<br>
+E-Governance
+</p>
+
+</div>
+
+<div class="editor-card">
+
+<h3>Mohammad Ali Shariati</h3>
+
+<p>
+<span class="label">Affiliation:</span><br>
+Isfahan University of Technology,<br>
+Iran
+</p>
+
+<p>
+<span class="label">Expertise:</span><br>
+Food Science and Technology
+</p>
+
+</div>
+
+<div class="editor-card">
+
+<h3>Arun Kumar Sandu</h3>
+
+<p>
+<span class="label">Affiliation:</span><br>
+Coupang,<br>
+Seattle, USA
+</p>
+
+<p>
+<span class="label">Expertise:</span><br>
+Automation,<br>
+Software Engineering,<br>
+Data Science
+</p>
+
+</div>
+
+<div class="editor-card">
+
+<h3>Dr. Nguyen Thanh Hao</h3>
+
+<p>
+<span class="label">Affiliation:</span><br>
+Industrial University of Ho Chi Minh City,<br>
+Vietnam
+</p>
+
+<p>
+<span class="label">Expertise:</span><br>
+Heat and Refrigeration
+</p>
+
+</div>
+
+<div class="editor-card">
+
+<h3>Vamsi Krishna Yarlagadda</h3>
+
+<p>
+<span class="label">Affiliation:</span><br>
+SAP Architect,<br>
+John Stanford Center for Educational Excellence,<br>
+USA
+</p>
+
+<p>
+<span class="label">Expertise:</span><br>
+ERP Systems,<br>
+Enterprise Architecture
+</p>
+
+</div>
+
+<div class="editor-card">
+
+<h3>Venkata Koteswara Rao Ballamudi</h3>
+
+<p>
+<span class="label">Affiliation:</span><br>
+Senior Consultant – App Prog/Dev,<br>
+HTC Global Services,<br>
+USA
+</p>
+
+<p>
+<span class="label">Expertise:</span><br>
+Digital Cloud,<br>
+Artificial Intelligence,<br>
+Machine Learning
+</p>
+
+</div>
+
+<div class="editor-card">
+
+<h3>Dr. Jay K. Patel</h3>
+
+<p>
+<span class="label">Affiliation:</span><br>
+Arizona State University,<br>
+USA
+</p>
+
+<p>
+<span class="label">Expertise:</span><br>
+Mechanical & Aerospace Engineering,<br>
+Composite Materials,<br>
+Experimental Mechanics
+</p>
+
+</div>
+
+</div>
+
+<h2 class="section-title">
+
+Journal Manager
+
+</h2>
+
+<div class="editor-grid">
+
+<div class="editor-card">
+
+<h3>Chunhua Deming</h3>
+
+<p>
+<span class="label">Affiliation:</span><br>
+NUS Graduate School (NUSGS),<br>
+National University of Singapore,<br>
+Singapore
+</p>
+
+<p>
+<span class="label">Position:</span><br>
+Journal Manager
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+<div class="container">
+
+<img src="tmr-logo.png"
+alt="TMR Logo"
+style="width:70px;margin-bottom:15px;">
+
+<h3 style="margin-bottom:10px;">
+Technology &amp; Management Review
+</h3>
+
+<p style="margin-bottom:10px;">
+An International Peer-Reviewed Open Access Journal
+</p>
+
+<p style="font-size:14px;opacity:.9;">
+Published by Upright Publications
+</p>
+
+<p style="font-size:14px;opacity:.9;margin-top:8px;">
+&copy; 2026 Technology &amp; Management Review. All Rights Reserved.
+</p>
+
+</div>
+
+</footer>
+
+</body>
+
+</html>
