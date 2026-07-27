@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>The Power and Legacy of C Programming: A Deep Dive into the Language | Technology & Management Review</title>
+
+<meta name="description" content="Research article published in Technology & Management Review">
+<meta name="keywords" content="C Programming, Programming Language, Software Development">
+
+<link rel="icon" type="image/png" href="../../tmr-favicon.png">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Arial, Helvetica, sans-serif;
+background:#f4f6f9;
+color:#333;
+line-height:1.8;
+}
+
+a{
+text-decoration:none;
+color:#0d47a1;
+}
+
+a:hover{
+text-decoration:underline;
+}
+
+.container{
+width:90%;
+max-width:1100px;
+margin:auto;
+}
+
+header{
+background:#ffffff;
+border-bottom:4px solid #003366;
+padding:20px 0;
+}
+
+.header-top{
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+.header-top img{
+height:80px;
+}
+
+.site-title h1{
+font-size:32px;
+color:#003366;
+}
+
+.site-title p{
+margin-top:6px;
+font-size:15px;
+color:#666;
+}
+
+nav{
+background:#003366;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+flex-wrap:wrap;
+}
+
+nav li{
+margin:0;
+}
+
+nav a{
+display:block;
+padding:16px 20px;
+color:#ffffff;
+font-weight:bold;
+}
+
+nav a:hover{
+background:#00509d;
+text-decoration:none;
+}
+
+main{
+padding:40px 0;
+}
+
+.article-box{
+background:#ffffff;
+padding:40px;
+border-radius:8px;
+box-shadow:0 3px 10px rgba(0,0,0,.08);
+}
+
+.article-type{
+display:inline-block;
+background:#003366;
+color:#fff;
+padding:6px 12px;
+font-size:13px;
+font-weight:bold;
+border-radius:4px;
+margin-bottom:20px;
+}
+
+.article-title{
+font-size:34px;
+color:#003366;
+margin-bottom:20px;
+line-height:1.3;
+}
+
+.authors{
+font-size:18px;
+font-weight:bold;
+margin-bottom:20px;
+}
+
+.meta{
+background:#f7f7f7;
+border-left:5px solid #003366;
+padding:18px;
+margin:25px 0;
+}
+
+.meta p{
+margin:8px 0;
+}
+
+.section-title{
+font-size:24px;
+color:#003366;
+margin-top:40px;
+margin-bottom:15px;
+border-bottom:2px solid #003366;
+padding-bottom:8px;
+}
+
+.download-btn{
+display:inline-block;
+margin-top:25px;
+background:#003366;
+color:#fff;
+padding:14px 26px;
+border-radius:5px;
+font-weight:bold;
+}
+
+.download-btn:hover{
+background:#00509d;
+text-decoration:none;
+}
+
+@media(max-width:768px){
+
+.header-top{
+flex-direction:column;
+text-align:center;
+}
+
+.header-top img{
+height:70px;
+}
+
+.site-title h1{
+font-size:26px;
+}
+
+.article-title{
+font-size:26px;
+}
+
+nav ul{
+flex-direction:column;
+}
+
+nav a{
+border-top:1px solid rgba(255,255,255,.15);
+}
+
+.article-box{
+padding:25px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="container">
+
+<div class="header-top">
+
+<img src="../../tmr-logo.png" alt="Technology & Management Review Logo">
+
+<div class="site-title">
+
+<h1>Technology & Management Review</h1>
+
+<p>International Peer-Reviewed Journal</p>
+
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+<nav>
+
+<div class="container">
+
+<ul>
+
+<li><a href="../../index.html">Home</a></li>
+
+<li><a href="../../current-issue.html">Current Issue</a></li>
+
+<li><a href="../../archives.html">Archives</a></li>
+
+<li><a href="../../editorial-board.html">Editorial Board</a></li>
+
+<li><a href="https://uprightpub.github.io/author-guidelines.html" target="_blank">Author Guidelines</a></li>
+
+</ul>
+
+</div>
+
+</nav>
+
+<main>
+
+<div class="container">
+
+<div class="article-box">
+
+<div class="article-type">
+
+Research Article
+
+</div>
+
+<h1 class="article-title">
+
+The Power and Legacy of C Programming: A Deep Dive into the Language
+
+</h1>
+
+<div class="authors">
+
+Parikshith Reddy Baddam<br>
+
+Swathi Kaluvakuri
+
+</div>
+
+<div class="meta">
+
+<p><strong>Published:</strong> January 2016</p>
+
+<p><strong>Pages:</strong> 1–13</p>
+
+<p><strong>Volume:</strong> 1</p>
+
+<p><strong>Issue:</strong> 1</p>
+
+</div>
+
+<h2 class="section-title">
+
+Abstract
+
+</h2>
+
+<p>
+
+The C programming language has played a pivotal role in the evolution of modern computing since its development in the early 1970s. This article explores the historical development, core features, practical applications, advantages, and continuing relevance of C programming in software engineering. It discusses how C has influenced the design of numerous modern programming languages and remains widely used in operating systems, embedded systems, compilers, and high-performance applications.
+
+</p>
+
+<h2 class="section-title">
+
+Keywords
+
+</h2>
+
+<p>
+
+C Programming, Programming Languages, Software Development, Systems Programming, Embedded Systems
+
+</p>
+
+<h2 class="section-title">
+
+How to Cite
+
+</h2>
+
+<p>
+
+Baddam, P., &amp; Kaluvakuri, S. (2016). <em>The Power and Legacy of C Programming: A Deep Dive into the Language.</em> <strong>Technology &amp; Management Review</strong>, 1(1), 1–13.
+
+</p>
+
+<a class="download-btn" href="pdf/1-13.pdf" target="_blank">
+
+Download PDF
+
+</a>
+
+<h2 class="section-title">
+
+Article Information
+
+</h2>
+
+<table style="width:100%;border-collapse:collapse;margin-top:20px;">
+
+<tr>
+
+<td style="padding:10px;border:1px solid #ddd;"><strong>Article Type</strong></td>
+
+<td style="padding:10px;border:1px solid #ddd;">Research Article</td>
+
+</tr>
+
+<tr>
+
+<td style="padding:10px;border:1px solid #ddd;"><strong>Language</strong></td>
+
+<td style="padding:10px;border:1px solid #ddd;">English</td>
+
+</tr>
+
+<tr>
+
+<td style="padding:10px;border:1px solid #ddd;"><strong>Publication Date</strong></td>
+
+<td style="padding:10px;border:1px solid #ddd;">January 2016</td>
+
+</tr>
+
+<tr>
+
+<td style="padding:10px;border:1px solid #ddd;"><strong>Volume</strong></td>
+
+<td style="padding:10px;border:1px solid #ddd;">1</td>
+
+</tr>
+
+<tr>
+
+<td style="padding:10px;border:1px solid #ddd;"><strong>Issue</strong></td>
+
+<td style="padding:10px;border:1px solid #ddd;">1</td>
+
+</tr>
+
+<tr>
+
+<td style="padding:10px;border:1px solid #ddd;"><strong>Pages</strong></td>
+
+<td style="padding:10px;border:1px solid #ddd;">1–13</td>
+
+</tr>
+
+</table>
+
+<h2 class="section-title">
+
+Navigation
+
+</h2>
+
+<div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:15px;margin-top:25px;">
+
+<a href="index.html">
+
+← Back to Volume 1, Issue 1
+
+</a>
+
+<a href="14-20.html">
+
+Next Article →
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</main>
+
+<footer style="background:#003366;color:#ffffff;margin-top:60px;padding:40px 0;">
+
+<div class="container">
+
+<div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px;">
+
+<div>
+
+<h3 style="margin-bottom:12px;">
+
+Technology &amp; Management Review
+
+</h3>
+
+<p>
+
+An international peer-reviewed scholarly journal published by Upright Publications.
+
+</p>
+
+</div>
+
+<div>
+
+<h3 style="margin-bottom:12px;">
+
+Quick Links
+
+</h3>
+
+<p><a href="../../index.html" style="color:#ffffff;">Home</a></p>
+
+<p><a href="../../current-issue.html" style="color:#ffffff;">Current Issue</a></p>
+
+<p><a href="../../archives.html" style="color:#ffffff;">Archives</a></p>
+
+<p><a href="../../editorial-board.html" style="color:#ffffff;">Editorial Board</a></p>
+
+</div>
+
+</div>
+
+<hr style="margin:30px 0;border:none;border-top:1px solid rgba(255,255,255,.2);">
+
+<p style="text-align:center;">
+
+© 2016 Technology &amp; Management Review. All Rights Reserved.
+
+</p>
+
+</div>
+
+</footer>
+
+</body>
+
+</html>
