@@ -118,6 +118,28 @@ transition:.3s;
 
 }
 
+#searchBox{
+    margin-left:20px;
+    width:180px;
+    padding:8px 12px;
+    border:1px solid rgba(255,255,255,.35);
+    border-radius:20px;
+    background:#25598a;
+    color:#fff;
+    font-size:14px;
+    outline:none;
+}
+
+#searchBox::placeholder{
+    color:#dbe8f4;
+}
+
+#searchBox:focus{
+    background:#ffffff;
+    color:#222;
+    border-color:#ffffff;
+}
+
 nav a:hover{
 
 background:#0d5b97;
@@ -262,6 +284,11 @@ Scholarly Journal for Technology, Management and Interdisciplinary Research
 
 <a href="https://uprightpub.github.io/submission.html" target="_blank">Manuscript Submission</a>
 
+<input
+    type="text"
+    id="searchBox"
+    placeholder="Search..."
+>
 </nav>
 
 </div>
