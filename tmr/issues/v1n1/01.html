@@ -191,6 +191,809 @@ display:block;
 (Header, Navigation, Article Layout,
 Buttons, Footer, Responsive Design)
 will be added in Part 2. */
+/* =======================================================
+   HEADER
+======================================================= */
+
+.site-header{
+
+background:var(--primary);
+
+color:var(--white);
+
+box-shadow:var(--shadow);
+
+position:sticky;
+
+top:0;
+
+z-index:1000;
+
+}
+
+.header-top{
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+padding:18px 0;
+
+}
+
+.logo{
+
+display:flex;
+
+align-items:center;
+
+color:var(--white);
+
+}
+
+.logo img{
+
+width:72px;
+
+height:auto;
+
+margin-right:18px;
+
+}
+
+.logo-text h1{
+
+font-size:30px;
+
+color:var(--white);
+
+margin-bottom:4px;
+
+}
+
+.logo-text p{
+
+font-size:15px;
+
+opacity:.95;
+
+font-family:'Inter',sans-serif;
+
+}
+
+/* =======================================================
+   NAVIGATION
+======================================================= */
+
+.main-nav{
+
+border-top:1px solid rgba(255,255,255,.15);
+
+}
+
+.main-nav ul{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-wrap:wrap;
+
+list-style:none;
+
+}
+
+.main-nav li{
+
+margin:0;
+
+}
+
+.main-nav a{
+
+display:block;
+
+padding:16px 20px;
+
+color:var(--white);
+
+font-weight:600;
+
+font-size:15px;
+
+}
+
+.main-nav a:hover{
+
+background:rgba(255,255,255,.12);
+
+}
+
+/* =======================================================
+   HERO
+======================================================= */
+
+.article-hero{
+
+padding:50px 0 35px;
+
+background:linear-gradient(180deg,#eef5fb 0%, #f7f9fc 100%);
+
+}
+
+.hero-card{
+
+background:var(--white);
+
+border-radius:var(--radius);
+
+box-shadow:var(--shadow);
+
+padding:40px;
+
+border-top:5px solid var(--primary);
+
+}
+
+.journal-badge{
+
+display:inline-block;
+
+background:var(--primary);
+
+color:var(--white);
+
+padding:8px 16px;
+
+border-radius:30px;
+
+font-size:14px;
+
+font-weight:600;
+
+margin-bottom:22px;
+
+}
+
+.hero-card h2{
+
+font-size:42px;
+
+margin-bottom:22px;
+
+}
+
+.hero-meta{
+
+font-size:18px;
+
+color:var(--muted);
+
+}
+
+.hero-meta span{
+
+margin:0 10px;
+
+color:var(--primary);
+
+}
+
+/* =======================================================
+   BREADCRUMB
+======================================================= */
+
+.breadcrumb{
+
+display:flex;
+
+align-items:center;
+
+flex-wrap:wrap;
+
+gap:10px;
+
+margin:35px 0;
+
+font-size:15px;
+
+}
+
+.breadcrumb a{
+
+color:var(--primary);
+
+font-weight:600;
+
+}
+
+.breadcrumb span{
+
+color:var(--muted);
+
+}
+/* =======================================================
+   ARTICLE CARD
+======================================================= */
+
+.article-card{
+
+background:var(--white);
+
+border-radius:var(--radius);
+
+box-shadow:var(--shadow);
+
+padding:50px;
+
+margin-bottom:60px;
+
+}
+
+.article-card h3{
+
+font-size:30px;
+
+margin:35px 0 18px;
+
+}
+
+.article-card p{
+
+font-size:17px;
+
+line-height:1.9;
+
+color:var(--text);
+
+}
+
+/* =======================================================
+   AUTHORS
+======================================================= */
+
+.authors{
+
+font-size:22px;
+
+font-weight:600;
+
+margin:15px 0 10px;
+
+}
+
+.affiliations{
+
+margin:20px 0;
+
+padding:20px;
+
+background:#fafbfd;
+
+border-left:4px solid var(--primary);
+
+font-size:16px;
+
+}
+
+.article-info{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:20px;
+
+margin:35px 0;
+
+}
+
+.info-card{
+
+background:var(--secondary);
+
+border:1px solid var(--border);
+
+border-radius:8px;
+
+padding:20px;
+
+}
+
+.info-card h4{
+
+font-size:15px;
+
+font-family:'Inter',sans-serif;
+
+margin-bottom:8px;
+
+color:var(--muted);
+
+}
+
+.info-card p{
+
+margin:0;
+
+font-size:17px;
+
+font-weight:600;
+
+}
+
+/* =======================================================
+   ABSTRACT
+======================================================= */
+
+.abstract-box{
+
+background:#fcfdff;
+
+border-left:5px solid var(--primary);
+
+padding:28px;
+
+margin:25px 0 35px;
+
+border-radius:0 8px 8px 0;
+
+}
+
+.abstract-box p{
+
+margin:0;
+
+text-align:justify;
+
+}
+
+/* =======================================================
+   KEYWORDS
+======================================================= */
+
+.keyword-box{
+
+background:var(--secondary);
+
+border:1px solid var(--border);
+
+padding:22px;
+
+border-radius:8px;
+
+margin:20px 0 35px;
+
+font-size:16px;
+
+}
+
+/* =======================================================
+   HOW TO CITE
+======================================================= */
+
+.citation-box{
+
+background:#f8f9fb;
+
+border:1px solid var(--border);
+
+border-left:5px solid var(--primary);
+
+padding:25px;
+
+border-radius:0 8px 8px 0;
+
+margin:20px 0 35px;
+
+line-height:1.9;
+
+}
+
+/* =======================================================
+   BUTTONS
+======================================================= */
+
+.button{
+
+display:inline-block;
+
+background:var(--primary);
+
+color:var(--white);
+
+padding:14px 28px;
+
+border-radius:8px;
+
+font-weight:600;
+
+margin-top:20px;
+
+}
+
+.button:hover{
+
+background:var(--primary-dark);
+
+transform:translateY(-2px);
+
+}
+
+.copy-btn{
+
+margin-left:15px;
+
+background:#ffffff;
+
+color:var(--primary);
+
+border:2px solid var(--primary);
+
+cursor:pointer;
+
+padding:12px 22px;
+
+border-radius:8px;
+
+font-weight:600;
+
+transition:.25s;
+
+}
+
+.copy-btn:hover{
+
+background:var(--primary);
+
+color:#ffffff;
+
+}
+
+/* =======================================================
+   ARTICLE NAVIGATION
+======================================================= */
+
+.article-nav{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-top:60px;
+
+padding-top:30px;
+
+border-top:1px solid var(--border);
+
+}
+
+.article-nav a{
+
+font-weight:600;
+
+color:var(--primary);
+
+}
+
+.article-nav a:hover{
+
+text-decoration:underline;
+
+}
+/* =======================================================
+   FOOTER
+======================================================= */
+
+.site-footer{
+
+background:var(--primary);
+
+color:var(--white);
+
+margin-top:70px;
+
+padding:50px 0 30px;
+
+}
+
+.footer-content{
+
+text-align:center;
+
+}
+
+.footer-content img{
+
+width:70px;
+
+margin:0 auto 18px;
+
+}
+
+.footer-content h3{
+
+color:var(--white);
+
+font-size:28px;
+
+margin-bottom:10px;
+
+}
+
+.footer-content p{
+
+color:rgba(255,255,255,.9);
+
+margin-bottom:10px;
+
+font-size:15px;
+
+}
+
+.footer-links{
+
+margin:25px 0;
+
+}
+
+.footer-links a{
+
+color:#ffffff;
+
+margin:0 12px;
+
+font-weight:600;
+
+}
+
+.footer-links a:hover{
+
+text-decoration:underline;
+
+}
+
+.copyright{
+
+margin-top:25px;
+
+padding-top:20px;
+
+border-top:1px solid rgba(255,255,255,.2);
+
+font-size:14px;
+
+opacity:.9;
+
+}
+
+/* =======================================================
+   UTILITIES
+======================================================= */
+
+.text-center{
+
+text-align:center;
+
+}
+
+.mt-20{
+
+margin-top:20px;
+
+}
+
+.mt-30{
+
+margin-top:30px;
+
+}
+
+.mb-20{
+
+margin-bottom:20px;
+
+}
+
+.mb-30{
+
+margin-bottom:30px;
+
+}
+
+/* =======================================================
+   RESPONSIVE
+======================================================= */
+
+@media (max-width:992px){
+
+.hero-card{
+
+padding:30px;
+
+}
+
+.hero-card h2{
+
+font-size:34px;
+
+}
+
+.article-card{
+
+padding:35px;
+
+}
+
+.logo-text h1{
+
+font-size:26px;
+
+}
+
+}
+
+@media (max-width:768px){
+
+.header-top{
+
+justify-content:center;
+
+text-align:center;
+
+}
+
+.logo{
+
+flex-direction:column;
+
+}
+
+.logo img{
+
+margin:0 0 15px;
+
+}
+
+.main-nav ul{
+
+flex-direction:column;
+
+}
+
+.main-nav a{
+
+padding:12px;
+
+}
+
+.hero-card{
+
+padding:25px;
+
+}
+
+.hero-card h2{
+
+font-size:28px;
+
+}
+
+.article-card{
+
+padding:25px;
+
+}
+
+.authors{
+
+font-size:19px;
+
+}
+
+.article-info{
+
+grid-template-columns:1fr;
+
+}
+
+.article-nav{
+
+flex-direction:column;
+
+gap:18px;
+
+text-align:center;
+
+}
+
+.footer-links a{
+
+display:block;
+
+margin:10px 0;
+
+}
+
+}
+
+@media (max-width:480px){
+
+body{
+
+font-size:16px;
+
+}
+
+.hero-card h2{
+
+font-size:24px;
+
+}
+
+.article-card h3{
+
+font-size:24px;
+
+}
+
+.button,
+.copy-btn{
+
+display:block;
+
+width:100%;
+
+text-align:center;
+
+margin:12px 0;
+
+}
+
+}
+
+/* =======================================================
+   PRINT
+======================================================= */
+
+@media print{
+
+.site-header,
+.site-footer,
+.main-nav,
+.button,
+.copy-btn,
+.article-nav{
+
+display:none !important;
+
+}
+
+body{
+
+background:#ffffff;
+
+}
+
+.article-card{
+
+box-shadow:none;
+
+border:none;
+
+padding:0;
+
+margin:0;
+
+}
+
+}
 
 </style>
 
@@ -341,4 +1144,244 @@ Main Content Starts
 <main class="container">
 
 <article class="article-card">
+<!-- ======================================================
+     ARTICLE CONTENT
+====================================================== -->
 
+<h3>
+The Power and Legacy of C Programming:
+A Deep Dive into the Language
+</h3>
+
+<div class="authors">
+
+Parikshith Reddy Baddam<sup>1</sup>,
+Swathi Kaluvakuri<sup>2</sup>
+
+</div>
+
+<div class="affiliations">
+
+<p>
+<sup>1</sup> Department of Computer Science,
+ABC University, India
+</p>
+
+<p>
+<sup>2</sup> School of Computing,
+XYZ University, India
+</p>
+
+<p>
+
+<strong>Corresponding Author:</strong>
+
+parikshith@example.com
+
+</p>
+
+</div>
+
+<div class="article-info">
+
+<div class="info-card">
+
+<h4>Article Type</h4>
+
+<p>Research Article</p>
+
+</div>
+
+<div class="info-card">
+
+<h4>Published</h4>
+
+<p>16 January 2016</p>
+
+</div>
+
+<div class="info-card">
+
+<h4>Pages</h4>
+
+<p>1–13</p>
+
+</div>
+
+<div class="info-card">
+
+<h4>Language</h4>
+
+<p>English</p>
+
+</div>
+
+</div>
+
+<h3>Abstract</h3>
+
+<div class="abstract-box">
+
+<p>
+
+Paste the complete abstract of the published article here.
+
+The abstract should exactly match the published PDF version.
+
+This section normally contains a concise summary of the objectives, methodology, results, and conclusions of the study.
+
+</p>
+
+</div>
+
+<h3>Keywords</h3>
+
+<div class="keyword-box">
+
+C Programming,
+Programming Languages,
+Software Engineering,
+Compiler Design,
+Software Development
+
+</div>
+
+<h3>How to Cite</h3>
+
+<div class="citation-box"
+id="citation">
+
+Baddam, P., &amp; Kaluvakuri, S. (2016).
+
+<i>
+
+The Power and Legacy of C Programming:
+A Deep Dive into the Language.
+
+</i>
+
+Technology &amp; Management Review,
+
+<b>1</b>(1),
+
+1–13.
+
+<br><br>
+
+Available at:
+
+https://uprightpub.github.io/tmr/issues/v1n1/01.html
+
+</div>
+
+<a
+class="button"
+href="pdf/01.pdf"
+target="_blank"
+rel="noopener noreferrer">
+
+📄 Download PDF
+
+</a>
+
+<button
+class="copy-btn"
+onclick="copyCitation()">
+
+Copy Citation
+
+</button>
+
+<div class="article-nav">
+
+<a href="index.html">
+
+← Back to Volume 1 • Issue 1
+
+</a>
+
+<a href="02.html">
+
+Next Article →
+
+</a>
+
+</div>
+</article>
+
+</main>
+
+<!-- ======================================================
+     FOOTER
+====================================================== -->
+
+<footer class="site-footer">
+
+<div class="container">
+
+<div class="footer-content">
+
+<img src="../../tmr-logo.png"
+alt="Technology &amp; Management Review Logo">
+
+<h3>
+
+Technology &amp; Management Review
+
+</h3>
+
+<p>
+
+Scholarly Journal for Technology, Management and Interdisciplinary Research
+
+</p>
+
+<div class="footer-links">
+
+<a href="../../index.html">Home</a>
+
+<a href="../../editorial-board.html">Editorial Board</a>
+
+<a href="../../current-issue.html">Current Issue</a>
+
+<a href="../../archives.html">Archives</a>
+
+</div>
+
+<div class="copyright">
+
+&copy; 2026 Technology &amp; Management Review.
+
+Published by <strong>Upright Publications</strong>.
+
+All Rights Reserved.
+
+</div>
+
+</div>
+
+</div>
+
+</footer>
+
+<!-- ======================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script>
+
+function copyCitation(){
+
+const citation=document.getElementById("citation").innerText;
+
+navigator.clipboard.writeText(citation);
+
+alert("Citation copied successfully.");
+
+}
+
+</script>
+
+</body>
+
+</html>
