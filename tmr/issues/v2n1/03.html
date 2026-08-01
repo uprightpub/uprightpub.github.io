@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Basic SEO -->
+
+<title>
+Mastering JavaScript's Full Potential to Become a Web Development Giant |
+Technology & Management Review
+</title>
+
+<meta name="description"
+content="Research article published in Technology & Management Review.">
+
+<meta name="keywords"
+content="JavaScript, Web Development, Web Performance Optimization, API Integration, Front-End Development, Web Applications, Programming">
+
+<meta name="author"
+content="Vishal Reddy Vadiyala, Parikshith Reddy Baddam">
+
+<meta name="robots"
+content="index, follow">
+
+<meta name="language"
+content="English">
+
+<meta name="theme-color"
+content="#0b4a7d">
+
+<!-- Open Graph -->
+
+<meta property="og:type" content="article">
+
+<meta property="og:title"
+content="Mastering JavaScript's Full Potential to Become a Web Development Giant">
+
+<meta property="og:site_name"
+content="Technology & Management Review">
+
+<meta property="og:description"
+content="Research article published in Technology & Management Review.">
+
+<meta property="og:url"
+content="https://uprightpub.github.io/tmr/issues/v1n1/01.html">
+
+<!-- Twitter -->
+
+<meta name="twitter:card"
+content="summary">
+
+<meta name="twitter:title"
+content="Mastering JavaScript's Full Potential to Become a Web Development Giant">
+
+<meta name="twitter:description"
+content="Research article published in Technology & Management Review.">
+
+<!-- Canonical -->
+
+<link rel="canonical"
+href="https://uprightpub.github.io/tmr/issues/v2n1/02.html">
+
+<!-- Favicon -->
+
+<link rel="icon"
+type="image/png"
+href="../../tmr-favicon.png">
+
+<!-- Fonts -->
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap"
+rel="stylesheet">
+
+<style>
+
+/* =======================================================
+   Technology & Management Review
+   Master Article Template v2.0
+======================================================= */
+
+:root{
+
+--primary:#0b4a7d;
+--primary-dark:#08365c;
+
+--secondary:#f4f7fb;
+
+--border:#dfe7ef;
+
+--text:#2f3640;
+
+--muted:#6c757d;
+
+--white:#ffffff;
+
+--shadow:0 6px 20px rgba(0,0,0,.08);
+
+--radius:10px;
+
+--container:1180px;
+
+}
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+body{
+
+font-family:'Inter',sans-serif;
+
+font-size:15px;
+
+line-height:1.8;
+
+color:var(--text);
+
+background:#f7f9fc;
+
+-webkit-font-smoothing:antialiased;
+
+}
+
+.container{
+
+width:92%;
+
+max-width:var(--container);
+
+margin:auto;
+
+}
+
+/* ==========================
+   Typography
+========================== */
+
+h1,h2,h3,h4{
+
+font-family:'Merriweather',serif;
+
+color:var(--primary);
+
+line-height:1.35;
+
+}
+
+p{
+
+margin-bottom:2px;
+
+}
+
+a{
+
+text-decoration:none;
+
+transition:.25s;
+
+}
+
+img{
+
+max-width:100%;
+
+display:block;
+
+}
+
+/* Remaining CSS
+(Header, Navigation, Article Layout,
+Buttons, Footer, Responsive Design)
+will be added in Part 2. */
+/* =======================================================
+   HEADER
+======================================================= */
+
+.site-header{
+
+background:var(--primary);
+
+color:var(--white);
+
+box-shadow:var(--shadow);
+
+position:sticky;
+
+top:0;
+
+z-index:1000;
+
+}
+
+.header-top{
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+padding:18px 0;
+
+}
+
+.logo{
+
+display:flex;
+
+align-items:center;
+
+color:var(--white);
+
+}
+
+.logo img{
+
+width:72px;
+
+height:auto;
+
+margin-right:18px;
+
+}
+
+.logo-text h1{
+
+font-size:30px;
+
+color:var(--white);
+
+margin-bottom:4px;
+
+}
+
+.logo-text p{
+
+font-size:14px;
+
+opacity:.95;
+
+font-family:'Inter',sans-serif;
+
+}
+
+/* =======================================================
+   NAVIGATION
+======================================================= */
+
+.main-nav{
+
+border-top:1px solid rgba(255,255,255,.15);
+
+}
+
+.main-nav ul{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-wrap:wrap;
+
+list-style:none;
+
+}
+
+.main-nav li{
+
+margin:0;
+
+}
+
+.main-nav a{
+
+display:block;
+
+padding:16px 20px;
+
+color:var(--white);
+
+font-weight:600;
+
+font-size:15px;
+
+}
+
+.main-nav a:hover{
+
+background:rgba(255,255,255,.12);
+
+}
+
+/* =======================================================
+   HERO
+======================================================= */
+
+.article-hero{
+
+padding:50px 0 35px;
+
+background:linear-gradient(180deg,#eef5fb 0%, #f7f9fc 100%);
+
+}
+
+.hero-card{
+
+background:var(--white);
+
+border-radius:var(--radius);
+
+box-shadow:var(--shadow);
+
+padding:40px;
+
+border-top:5px solid var(--primary);
+
+}
+
+.journal-badge{
+
+display:inline-block;
+
+background:var(--primary);
+
+color:var(--white);
+
+padding:8px 16px;
+
+border-radius:30px;
+
+font-size:14px;
+
+font-weight:600;
+
+margin-bottom:22px;
+
+}
+
+.hero-card h2{
+
+font-size:42px;
+
+margin-bottom:22px;
+
+}
+
+.hero-meta{
+
+font-size:18px;
+
+color:var(--muted);
+
+}
+
+.hero-meta span{
+
+margin:0 10px;
+
+color:var(--primary);
+
+}
+
+/* =======================================================
+   BREADCRUMB
+======================================================= */
+
+.breadcrumb{
+
+display:flex;
+
+align-items:center;
+
+flex-wrap:wrap;
+
+gap:10px;
+
+margin:35px 0;
+
+font-size:15px;
+
+}
+
+.breadcrumb a{
+
+color:var(--primary);
+
+font-weight:600;
+
+}
+
+.breadcrumb span{
+
+color:var(--muted);
+
+}
+/* =======================================================
+   ARTICLE CARD
+======================================================= */
+
+.article-card{
+
+background:var(--white);
+
+border-radius:var(--radius);
+
+box-shadow:var(--shadow);
+
+padding:50px;
+
+margin-bottom:60px;
+
+}
+
+.article-card h3{
+
+font-size:30px;
+
+margin:35px 0 18px;
+
+}
+
+.article-card p{
+
+font-size:17px;
+
+line-height:1.9;
+
+color:var(--text);
+
+}
+
+/* =======================================================
+   AUTHORS
+======================================================= */
+
+.authors{
+
+font-size:22px;
+
+font-weight:600;
+
+margin:15px 0 10px;
+
+}
+
+.affiliations{
+
+margin:20px 0;
+
+padding:16px;
+
+background:#fafbfd;
+
+border-left:4px solid var(--primary);
+
+font-size:16px;
+
+}
+
+.article-info{
+
+display:grid;
+
+grid-template-columns:repeat(5,1fr);
+
+gap:16px;
+
+margin:35px 0;
+
+}
+
+.info-card{
+
+background:var(--secondary);
+
+border:1px solid var(--border);
+
+border-radius:8px;
+
+padding:16px;
+
+}
+
+.info-card h4{
+
+font-size:15px;
+
+font-family:'Inter',sans-serif;
+
+margin-bottom:8px;
+
+color:var(--muted);
+
+}
+
+.info-card p{
+
+margin:0;
+
+font-size:15px;
+
+font-weight:600;
+
+}
+
+/* =======================================================
+   ABSTRACT
+======================================================= */
+
+.abstract-box{
+
+background:#fcfdff;
+
+border-left:5px solid var(--primary);
+
+padding:28px;
+
+margin:25px 0 35px;
+
+border-radius:0 8px 8px 0;
+
+}
+
+.abstract-box p{
+
+margin:0;
+
+text-align:justify;
+
+}
+
+/* =======================================================
+   KEYWORDS
+======================================================= */
+
+.keyword-box{
+
+background:var(--secondary);
+
+border:1px solid var(--border);
+
+padding:22px;
+
+border-radius:8px;
+
+margin:20px 0 35px;
+
+font-size:16px;
+
+}
+
+/* =======================================================
+   HOW TO CITE
+======================================================= */
+
+.citation-box{
+
+background:#f8f9fb;
+
+border:1px solid var(--border);
+
+border-left:5px solid var(--primary);
+
+padding:25px;
+
+border-radius:0 8px 8px 0;
+
+margin:20px 0 35px;
+
+line-height:1.9;
+
+}
+
+/* =======================================================
+   BUTTONS
+======================================================= */
+
+.button{
+
+display:inline-flex;
+align-items:center;
+justify-content:center;
+gap:8px;
+text-decoration:none;
+background:var(--primary);
+
+color:var(--white);
+
+padding:14px 28px;
+
+border-radius:8px;
+
+font-weight:600;
+
+margin-top:20px;
+
+}
+
+.button:hover{
+
+background:var(--primary-dark);
+
+transform:translateY(-2px);
+
+}
+
+.copy-btn{
+
+margin-left:15px;
+
+background:#ffffff;
+
+color:var(--primary);
+
+border:2px solid var(--primary);
+
+cursor:pointer;
+
+padding:12px 22px;
+
+border-radius:8px;
+
+font-weight:600;
+
+transition:.25s;
+
+}
+
+.copy-btn:hover{
+
+background:var(--primary);
+
+color:#ffffff;
+
+}
+
+/* =======================================================
+   ARTICLE NAVIGATION
+======================================================= */
+
+.article-nav{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-top:60px;
+
+padding-top:30px;
+
+border-top:1px solid var(--border);
+
+}
+
+.article-nav a{
+
+font-weight:600;
+
+color:var(--primary);
+
+}
+
+.article-nav a:hover{
+
+text-decoration:underline;
+
+}
+/* =======================================================
+   FOOTER
+======================================================= */
+
+.site-footer{
+
+background:var(--primary);
+
+color:var(--white);
+
+margin-top:70px;
+
+padding:50px 0 30px;
+
+}
+
+.footer-content{
+
+text-align:center;
+
+}
+
+.footer-content img{
+
+width:70px;
+
+margin:0 auto 18px;
+
+}
+
+.footer-content h3{
+
+color:var(--white);
+
+font-size:28px;
+
+margin-bottom:10px;
+
+}
+
+.footer-content p{
+
+color:rgba(255,255,255,.9);
+
+margin-bottom:10px;
+
+font-size:15px;
+
+}
+
+.footer-links{
+
+margin:25px 0;
+
+}
+
+.footer-links a{
+
+color:#ffffff;
+
+margin:0 12px;
+
+font-weight:600;
+
+}
+
+.footer-links a:hover{
+
+text-decoration:underline;
+
+}
+
+.copyright{
+
+margin-top:25px;
+
+padding-top:20px;
+
+border-top:1px solid rgba(255,255,255,.2);
+
+font-size:14px;
+
+opacity:.9;
+
+text-align: center;
+
+}
+
+/* =======================================================
+   UTILITIES
+======================================================= */
+
+.text-center{
+
+text-align:center;
+
+}
+
+.mt-20{
+
+margin-top:20px;
+
+}
+
+.mt-30{
+
+margin-top:30px;
+
+}
+
+.mb-20{
+
+margin-bottom:20px;
+
+}
+
+.mb-30{
+
+margin-bottom:30px;
+
+}
+
+/* =======================================================
+   RESPONSIVE
+======================================================= */
+
+@media (max-width:992px){
+
+.hero-card{
+
+padding:30px;
+
+}
+
+.hero-card h2{
+
+font-size:34px;
+
+}
+
+.article-card{
+
+padding:35px;
+
+}
+
+.logo-text h1{
+
+font-size:26px;
+
+}
+
+}
+
+@media (max-width:768px){
+
+.header-top{
+
+justify-content:center;
+
+text-align:center;
+
+}
+
+.logo{
+
+flex-direction:column;
+
+}
+
+.logo img{
+
+margin:0 0 15px;
+
+}
+
+.main-nav ul{
+
+flex-direction:column;
+
+}
+
+.main-nav a{
+
+padding:12px;
+
+}
+
+.hero-card{
+
+padding:25px;
+
+}
+
+.hero-card h2{
+
+font-size:28px;
+
+}
+
+.article-card{
+
+padding:25px;
+
+}
+
+.authors{
+
+font-size:19px;
+
+}
+
+.article-info{
+
+grid-template-columns:1fr;
+
+}
+
+.article-nav{
+
+flex-direction:column;
+
+gap:18px;
+
+text-align:center;
+
+}
+
+.footer-links a{
+
+display:block;
+
+margin:10px 0;
+
+}
+
+}
+
+@media (max-width:480px){
+
+body{
+
+font-size:16px;
+
+}
+
+.hero-card h2{
+
+font-size:24px;
+
+}
+
+.article-card h3{
+
+font-size:24px;
+
+}
+
+.button,
+.copy-btn{
+
+display:block;
+
+width:100%;
+
+text-align:center;
+
+margin:12px 0;
+
+}
+
+}
+
+/* =======================================================
+   PRINT
+======================================================= */
+
+@media print{
+
+.site-header,
+.site-footer,
+.main-nav,
+.button,
+.copy-btn,
+.article-nav{
+
+display:none !important;
+
+}
+
+body{
+
+background:#ffffff;
+
+}
+
+.article-card{
+
+box-shadow:none;
+
+border:none;
+
+padding:0;
+
+margin:0;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header class="site-header">
+
+<div class="container">
+
+<div class="header-top">
+
+<a href="../../index.html" class="logo">
+
+<img src="../../tmr-logo.png"
+alt="Technology & Management Review Logo">
+
+<div class="logo-text">
+
+<h1>Technology &amp; Management Review</h1>
+
+<p>
+Scholarly Journal for Technology, Management and Interdisciplinary Research
+</p>
+
+</div>
+
+</a>
+
+</div>
+
+<nav class="main-nav">
+
+<ul>
+
+<li>
+<a href="../../index.html">Home</a>
+</li>
+
+<li>
+<a href="../../editorial-board.html">Editorial Board</a>
+</li>
+
+<li>
+<a href="../../archives.html">Archives</a>
+</li>
+
+<li>
+<a href="../../../author-guidelines.html">
+Author Guidelines
+</a>
+</li>
+
+<li>
+<a href="../../../publication-ethics.html">
+Publication Ethics
+</a>
+</li>
+
+<li>
+<a href="../../../submission.html">
+Manuscript Submission
+</a>
+</li>
+
+</ul>
+
+</nav>
+
+</div>
+
+</header>
+
+<!-- =========================
+Article Hero
+========================= -->
+
+<section class="article-hero">
+
+<div class="container">
+
+<div class="hero-card">
+
+<div class="journal-badge">
+
+Peer-Reviewed Article
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+Breadcrumb
+========================= -->
+
+<div class="container">
+
+<nav class="breadcrumb">
+
+<a href="../../index.html">Home</a>
+
+<span>›</span>
+
+<a href="../../archives.html">Archives</a>
+
+<span>›</span>
+
+<a href="index.html">Volume 2 • Issue 1</a>
+
+<span>›</span>
+
+<span>Article</span>
+
+</nav>
+
+</div>
+
+<!-- =========================
+Main Content Starts
+========================= -->
+
+<main class="container">
+
+<article class="article-card">
+<!-- ======================================================
+     ARTICLE CONTENT
+====================================================== -->
+
+<h3>
+Mastering JavaScript's Full Potential to Become a Web Development Giant
+</h3>
+
+<div class="authors">
+
+Karu Lal<sup>1</sup>,
+Venkata Koteswara Rao Ballamudi<sup>2</sup>
+
+</div>
+
+<div class="affiliations">
+
+<p>
+<sup>1</sup> Integration Engineer, Ohio National Financial Services, USA
+</p>
+<p>
+<sup>2</sup> Sr. Software Engineer, High Quartile LLC, USA
+</p>
+
+</div>
+
+<div class="article-info">
+
+<div class="info-card">
+<h4>Volume</h4>
+<p>Vol 2 • No. 1 • 2017</p>
+</div>
+
+<div class="info-card">
+<h4>Pages</h4>
+<p>13–24</p>
+</div>
+
+<div class="info-card">
+<h4>Submitted</h4>
+<p>18 March 2017</p>
+</div>
+
+<div class="info-card">
+<h4>Accepted</h4>
+<p>21 April 2017</p>
+</div>
+
+<div class="info-card">
+<h4>Published</h4>
+<p>30 April 2017</p>
+</div>
+
+</div>
+
+<h3>Abstract</h3>
+
+<div class="abstract-box">
+
+<p>
+
+The introduction of JavaScript for the web has fundamentally altered how we engage with the digital world. Developing interactive online applications requires mastery of this high-level programming language, which is both powerful and flexible. Developers are given the ability to perform complicated activities seamlessly by utilizing asynchronous programming. The remit encompasses server-side JavaScript written in Node.js and fundamental concerns regarding data safety. Important aspects of contemporary web development include the utilization of responsive designs, optimization for mobile platforms, and integration of application programming interfaces (APIs). This article highlights the key insights and benefits, delves into advanced JavaScript concepts, modern web development techniques, and best practices, enabling readers to build dynamic and interactive web applications. This review will be a comprehensive guide that empowers web developers to harness the full potential of JavaScript in web applications. With a focus on performance optimization and security considerations, it ensures that readers can develop high-quality web applications while staying up-to-date with the latest industry trends.
+
+</p>
+
+</div>
+
+<h3>Keywords</h3>
+
+<div class="keyword-box">
+
+JavaScript, Web Development, Web Performance Optimization, API Integration, Front-End Development, Web Applications, Programming
+
+</div>
+
+<h3>How to Cite</h3>
+
+<div class="citation-box">
+
+<div id="citation">
+
+Vadiyala, V. R., &amp; Baddam, P. R. (2017).
+Mastering JavaScript's Full Potential to Become a Web Development Giant.
+<i>Technology &amp; Management Review, 2</i>(1), 13–24.
+<a href="https://uprightpub.github.io/tmr/issues/v2n1/03.html" target="_blank">
+https://uprightpub.github.io/tmr/issues/v2n1/03.html
+</a>
+
+</div>
+
+<br>
+
+<button
+class="copy-btn"
+onclick="copyCitation()">
+
+Copy Citation
+
+</button>
+
+</div>
+
+<a
+class="button"
+href="pdf/02.pdf"
+target="_blank"
+rel="noopener noreferrer">
+
+<img src="../../../assets/images/pdf-icon.png"
+     class="pdf-icon"
+     alt="PDF">
+
+Download Full Text
+
+</a>
+
+<div class="article-nav">
+
+<a href="index.html">
+
+← Back to Volume 2 • Issue 1
+
+</a>
+
+<a href="03.html">
+
+Next Article →
+
+</a>
+
+</div>
+</article>
+
+</main>
+
+<!-- ======================================================
+     FOOTER
+====================================================== -->
+
+<footer class="site-footer">
+
+<div class="container">
+
+<div class="footer-content">
+
+<img src="../../tmr-logo.png"
+alt="Technology &amp; Management Review Logo">
+
+</div>
+
+<div class="copyright">
+
+&copy; 2026 Technology &amp; Management Review.
+
+Published by <strong>Upright Publications</strong>.
+
+All Rights Reserved.
+
+</div>
+
+</div>
+
+</div>
+
+</footer>
+
+<!-- ======================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script>
+
+function copyCitation(){
+
+const citation=document.getElementById("citation").innerText;
+
+navigator.clipboard.writeText(citation);
+
+alert("Citation copied successfully.");
+
+}
+
+</script>
+
+</body>
+
+</html>
