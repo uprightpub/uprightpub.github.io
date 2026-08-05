@@ -282,7 +282,10 @@ Please complete the submission form below. Fields marked with an asterisk (*) ar
 
 <div class="container">
 
-<form>
+<form
+    action="https://formsubmit.co/upright.pub@gmail.com"
+    method="POST"
+    enctype="multipart/form-data">
 
 <h2 class="section-title">
 
@@ -296,7 +299,7 @@ Select Journal *
 
 </label>
 
-<select required>
+<select name="Journal" required>
 
 <option value="">-- Select Journal --</option>
 
@@ -322,7 +325,10 @@ Full Name *
 
 </label>
 
-<input type="text" required>
+<input
+    type="text"
+    name="Corresponding Author"
+    required>
 
 <label>
 
@@ -330,7 +336,10 @@ Email Address *
 
 </label>
 
-<input type="email" required>
+<input
+    type="email"
+    name="Email"
+    required>
 
 <label>
 
@@ -338,7 +347,10 @@ Confirm Email Address *
 
 </label>
 
-<input type="email" required>
+<input
+    type="email"
+    name="Confirm Email"
+    required>
 <h2 class="section-title" style="margin-top:45px;">
 
 Manuscript Information
@@ -353,6 +365,7 @@ Article Title *
 
 <input
 type="text"
+name="Article Title"
 required>
 
 <label>
@@ -363,6 +376,7 @@ Authors *
 
 <input
 type="text"
+name="Authors"
 placeholder="Example: John Smith, Maria Ahmed, David Lee"
 required>
 
@@ -374,6 +388,7 @@ Upload Full Manuscript (.doc / .docx) *
 
 <input
 type="file"
+name="Manuscript"
 accept=".doc,.docx"
 required>
 
@@ -381,6 +396,8 @@ required>
 
 <input
 type="checkbox"
+name="Declaration"
+value="Confirmed"
 required>
 
 <label style="margin-top:0; font-weight:normal;">
@@ -410,7 +427,11 @@ upright.pub@gmail.com
 </strong>
 
 </p>
+<input type="hidden" name="_subject" value="New Manuscript Submission - Upright Publications">
 
+<input type="hidden" name="_template" value="table">
+
+<input type="hidden" name="_next" value="https://uprightpub.github.io/submission-success.html">
 </form>
 
 </div>
