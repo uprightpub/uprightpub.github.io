@@ -25,225 +25,90 @@ color:#333;
 line-height:1.8;
 }
 
-header{
-
-background:#0a3b63;
-padding:20px 40px;
-
-}
-
-.logo{
-
-display:flex;
-align-items:center;
-margin-bottom:20px;
-
-}
-
-.logo img{
-
-height:70px;
-margin-right:18px;
-
-}
-
-.logo h2{
-
-color:#fff;
-font-size:22px;
-
-}
-
-nav{
-
-display:flex;
-gap:35px;
-flex-wrap:wrap;
-
-}
-
-nav a{
-
-color:#fff;
-text-decoration:none;
-font-weight:bold;
-font-size:18px;
-transition:.3s;
-
-}
-
-nav a:hover{
-
-color:#ffd54f;
-
-}
-
-nav a.active{
-
-color:#ffd54f;
-border-bottom:3px solid #ffd54f;
-padding-bottom:5px;
-
-}
-
 .page-title{
-
 text-align:center;
 font-size:58px;
 font-weight:bold;
 color:#0a3b63;
 margin:60px 0 45px;
-
 }
 
 .container{
-
 max-width:1100px;
 margin:0 auto 80px;
 background:#fff;
 padding:60px 70px;
 border-radius:10px;
 box-shadow:0 5px 15px rgba(0,0,0,.08);
-
 }
 
 .container p{
-
 font-size:19px;
 line-height:1.9;
 margin-bottom:28px;
-
 }
 
 .container h3{
-
 color:#0a3b63;
 font-size:30px;
 margin-top:40px;
 margin-bottom:18px;
-
 }
 
 .container ul{
-
 margin-left:30px;
 margin-bottom:30px;
-
 }
 
 .container li{
-
 font-size:19px;
 line-height:1.9;
 margin-bottom:10px;
-
 }
 
 .container strong{
-
 color:#111;
-
 }
 
 footer{
-
 background:#222;
 color:#fff;
 text-align:center;
 padding:28px;
 font-size:16px;
-
 }
 
 @media(max-width:768px){
 
-header{
-
-padding:20px;
-
-}
-
-.logo{
-
-flex-direction:column;
-text-align:center;
-
-}
-
-.logo img{
-
-margin-right:0;
-margin-bottom:15px;
-
-}
-
-nav{
-
-flex-direction:column;
-gap:15px;
-
-}
-
 .page-title{
-
 font-size:42px;
-
 }
 
 .container{
-
 padding:35px;
-
 }
 
 .container h3{
-
 font-size:26px;
-
 }
 
 .container p,
 .container li{
-
 font-size:17px;
-
 }
 
 }
 
 </style>
 
+<link rel="stylesheet" href="assets/css/header.css">
+<link rel="stylesheet" href="assets/css/header-search.css">
+
 </head>
 
 <body>
 
-<header>
-
-<div class="logo">
-
-<img src="assets/images/up-logo.png" alt="Upright Publications">
-
-<h2>Upright Publications</h2>
-
-</div>
-
-<nav>
-
-<a href="index.html">Home</a>
-
-<a href="about.html">About</a>
-
-<a href="submission.html">Submission</a>
-
-<a href="author-guidelines.html" class="active">Author Guidelines</a>
-
-<a href="editorial-policy.html">Editorial Policy</a>
-
-<a href="publication-ethics.html">Publication Ethics</a>
-
-</nav>
-
-</header>
+<div id="site-header"></div>
 
 <h1 class="page-title">
 
@@ -352,6 +217,8 @@ The standard <strong>Article Processing Charge (APC)</strong> for an accepted ma
 <p>&copy; 2026 Upright Publications. All Rights Reserved.</p>
 
 </footer>
+
+<script src="assets/js/header-loader.js"></script>
 
 </body>
 

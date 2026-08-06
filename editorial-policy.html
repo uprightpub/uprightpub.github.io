@@ -22,44 +22,6 @@ background:#f7f7f7;
 color:#333;
 }
 
-header{
-background:#0a3b63;
-padding:18px 40px;
-}
-
-.logo{
-display:flex;
-align-items:center;
-margin-bottom:18px;
-}
-
-.logo img{
-height:70px;
-margin-right:16px;
-}
-
-.logo h2{
-color:#fff;
-font-size:22px;
-}
-
-nav{
-display:flex;
-gap:35px;
-flex-wrap:wrap;
-}
-
-nav a{
-color:#fff;
-text-decoration:none;
-font-weight:bold;
-font-size:18px;
-}
-
-nav a:hover{
-text-decoration:underline;
-}
-
 .page-title{
 text-align:center;
 font-size:48px;
@@ -100,44 +62,16 @@ padding:25px;
 font-size:16px;
 }
 
-nav a.active{
-    color:#ffd54f;
-    border-bottom:3px solid #ffd54f;
-    padding-bottom:5px;
-}
-
 </style>
+
+<link rel="stylesheet" href="assets/css/header.css">
+<link rel="stylesheet" href="assets/css/header-search.css">
 
 </head>
 
 <body>
 
-<header>
-
-<div class="logo">
-<img src="assets/images/up-logo.png" alt="Upright Publications">
-<h2>Upright Publications</h2>
-</div>
-
-<nav>
-<nav>
-
-<a href="index.html">Home</a>
-
-<a href="about.html">About</a>
-
-<a href="submission.html">Submission</a>
-
-<a href="author-guidelines.html">Author Guidelines</a>
-
-<a href="editorial-policy.html" class="active">Editorial Policy</a>
-
-<a href="publication-ethics.html">Publication Ethics</a>
-
-</nav>
-</nav>
-
-</header>
+<div id="site-header"></div>
 
 <h1 class="page-title">Editorial Policy</h1>
 
@@ -180,6 +114,8 @@ Where necessary, corrections, expressions of concern, or retractions will be iss
 © 2026 Upright Publications. All Rights Reserved.
 
 </footer>
+
+<script src="assets/js/header-loader.js"></script>
 
 </body>
 </html>

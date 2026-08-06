@@ -24,44 +24,6 @@ background:#f5f7fa;
 color:#333;
 }
 
-header{
-background:#0a3b63;
-padding:18px 40px;
-}
-
-.logo{
-display:flex;
-align-items:center;
-margin-bottom:18px;
-}
-
-.logo img{
-height:70px;
-margin-right:15px;
-}
-
-.logo h2{
-color:#fff;
-font-size:24px;
-}
-
-nav{
-display:flex;
-gap:35px;
-flex-wrap:wrap;
-}
-
-nav a{
-color:#fff;
-text-decoration:none;
-font-weight:bold;
-font-size:18px;
-}
-
-nav a:hover{
-text-decoration:underline;
-}
-
 .page-title{
 text-align:center;
 margin:60px 0 15px;
@@ -79,194 +41,102 @@ color:#555;
 }
 
 .container{
-
 max-width:900px;
-
 margin:50px auto 80px;
-
 background:white;
-
 padding:50px;
-
 border-radius:12px;
-
 box-shadow:0 8px 25px rgba(0,0,0,.08);
-
 }
 
 .section-title{
-
 font-size:28px;
-
 color:#0a3b63;
-
 margin-bottom:25px;
-
 padding-bottom:10px;
-
 border-bottom:2px solid #e5e5e5;
-
 }
 
 label{
-
 display:block;
-
 font-weight:bold;
-
 margin-top:25px;
-
 margin-bottom:8px;
-
 }
 
 input,
-
 select{
-
 width:100%;
-
 padding:14px;
-
 font-size:17px;
-
 border:1px solid #ccc;
-
 border-radius:6px;
-
 }
 
 input:focus,
-
 select:focus{
-
 outline:none;
-
 border-color:#0a3b63;
-
 }
 
 input[type=file]{
-
 padding:12px;
-
 }
 
 .checkbox{
-
 display:flex;
-
 align-items:flex-start;
-
 margin-top:30px;
-
 gap:12px;
-
 }
 
 .checkbox input{
-
 width:auto;
-
 margin-top:5px;
-
 }
 
-button{
-
+form button[type="submit"]{
 margin-top:35px;
-
 width:100%;
-
 padding:18px;
-
 background:#0a3b63;
-
 color:white;
-
 font-size:20px;
-
 font-weight:bold;
-
 border:none;
-
 border-radius:8px;
-
 cursor:pointer;
-
 transition:.3s;
-
 }
 
-button:hover{
-
+form button[type="submit"]:hover{
 background:#08406b;
-
 }
 
 .note{
-
 margin-top:35px;
-
 font-size:16px;
-
 color:#666;
-
 text-align:center;
-
 }
 
 footer{
-
 background:#222;
-
 color:white;
-
 text-align:center;
-
 padding:25px;
-
-}
-
-nav a.active{
-    color:#ffd54f;
-    border-bottom:3px solid #ffd54f;
-    padding-bottom:5px;
 }
 
 </style>
+
+<link rel="stylesheet" href="assets/css/header.css">
+<link rel="stylesheet" href="assets/css/header-search.css">
 
 </head>
 
 <body>
 
-<header>
-
-<div class="logo">
-
-<img src="assets/images/up-logo.png" alt="Upright Publications">
-
-<h2>Upright Publications</h2>
-
-</div>
-
-<nav>
-
-<a href="index.html">Home</a>
-
-<a href="about.html">About</a>
-
-<a href="submission.html" class="active">Submission</a>
-
-<a href="author-guidelines.html">Author Guidelines</a>
-
-<a href="editorial-policy.html">Editorial Policy</a>
-
-<a href="publication-ethics.html">Publication Ethics</a>
-
-</nav>
-
-</header>
+<div id="site-header"></div>
 
 <h1 class="page-title">
 
@@ -283,9 +153,9 @@ Please complete the submission form below. Fields marked with an asterisk (*) ar
 <div class="container">
 
 <form
-    action="https://formsubmit.co/upright.pub@gmail.com"
-    method="POST"
-    enctype="multipart/form-data">
+action="https://formsubmit.co/upright.pub@gmail.com"
+method="POST"
+enctype="multipart/form-data">
 
 <h2 class="section-title">
 
@@ -303,13 +173,13 @@ Select Journal *
 
 <option value="">-- Select Journal --</option>
 
-<option>Technology & Management Review</option>
+<option>Technology &amp; Management Review</option>
 
-<option>Digitalization & Sustainability Review</option>
+<option>Digitalization &amp; Sustainability Review</option>
 
 <option>International Journal of Reciprocal Symmetry and Theoretical Physics</option>
 
-<option>Apex Journal of Advanced Sciences & Engineering</option>
+<option>Apex Journal of Advanced Sciences &amp; Engineering</option>
 
 </select>
 
@@ -326,9 +196,9 @@ Full Name *
 </label>
 
 <input
-    type="text"
-    name="Corresponding Author"
-    required>
+type="text"
+name="Corresponding Author"
+required>
 
 <label>
 
@@ -337,9 +207,9 @@ Email Address *
 </label>
 
 <input
-    type="email"
-    name="email"
-    required>
+type="email"
+name="email"
+required>
 
 <label>
 
@@ -348,9 +218,10 @@ Confirm Email Address *
 </label>
 
 <input
-    type="email"
-    name="confirm_email"
-    required>
+type="email"
+name="confirm_email"
+required>
+
 <h2 class="section-title" style="margin-top:45px;">
 
 Manuscript Information
@@ -400,7 +271,7 @@ name="Declaration"
 value="Confirmed"
 required>
 
-<label style="margin-top:0; font-weight:normal;">
+<label style="margin-top:0;font-weight:normal;">
 
 I confirm that this manuscript is original and has not been submitted to another journal for publication.
 
@@ -427,10 +298,14 @@ upright.pub@gmail.com
 </strong>
 
 </p>
+
 <input type="hidden" name="_subject" value="New Manuscript Submission - Upright Publications">
 
 <input type="hidden" name="_template" value="table">
-<input type="hidden" name="_autoresponse"
+
+<input
+type="hidden"
+name="_autoresponse"
 value="Thank you for submitting your manuscript to Upright Publications.
 
 We have successfully received your submission.
@@ -441,7 +316,12 @@ Best regards,
 Editorial Office
 Upright Publications
 https://uprightpub.github.io">
-<input type="hidden" name="_next" value="https://uprightpub.github.io/submission-success.html">
+
+<input
+type="hidden"
+name="_next"
+value="https://uprightpub.github.io/submission-success.html">
+
 </form>
 
 </div>
@@ -451,6 +331,8 @@ https://uprightpub.github.io">
 © 2026 Upright Publications. All Rights Reserved.
 
 </footer>
+
+<script src="assets/js/header-loader.js"></script>
 
 </body>
 

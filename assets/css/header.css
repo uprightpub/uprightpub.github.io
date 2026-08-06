@@ -1,0 +1,66 @@
+/* ==========================================
+   Master Header
+========================================== */
+
+header{
+    background:#145b92;
+    color:#ffffff;
+    padding:20px 40px;
+}
+
+.site-title{
+    margin:0 0 20px;
+    display:flex;
+    align-items:center;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.site-title img{
+    height:60px;
+    margin-right:12px;
+}
+
+nav{
+    display:flex;
+    align-items:center;
+    gap:25px;
+    flex-wrap:nowrap;
+}
+
+nav a{
+    color:#ffffff;
+    text-decoration:none;
+    font-weight:bold;
+    white-space:nowrap;
+    flex-shrink:0;
+}
+
+nav a:hover{
+    text-decoration:underline;
+}
+
+nav a.active{
+    color:#ffd54f;
+    border-bottom:3px solid #ffd54f;
+    padding-bottom:5px;
+}
+
+.header-right{
+    margin-left:auto;
+    display:flex;
+    align-items:center;
+    flex-shrink:0;
+}
+
+.site-title img{
+    height:60px;
+    margin-right:12px;
+    transition:transform .35s ease, filter .35s ease;
+    cursor:pointer;
+}
+
+.site-title img:hover{
+    transform:translateY(-3px) scale(1.15);
+    filter:drop-shadow(0 8px 18px rgba(255,255,255,.35));
+}

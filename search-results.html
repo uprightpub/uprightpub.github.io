@@ -18,256 +18,128 @@ margin:0;
 background:#f7f7f7;
 }
 
-header{
-background:#0a3b63;
-color:white;
-padding:20px 40px;
-}
-
-header h2{
-margin:0;
-}
-
-nav{
-margin-top:15px;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-margin-right:25px;
-font-weight:bold;
-}
-
-nav a:hover{
-color:#ffd54f;
-}
-
 .container{
-
 max-width:1100px;
-
 margin:50px auto;
-
 padding:0 20px;
-
 }
 
 .search-box{
-
 margin-bottom:40px;
-
 }
 
 .search-box form{
-
 display:flex;
-
 gap:10px;
-
 }
 
 .search-box input{
-
 flex:1;
-
 padding:16px;
-
 font-size:17px;
-
 border:1px solid #ccc;
-
 border-radius:6px;
-
 outline:none;
-
 }
 
 .search-box button{
-
 padding:16px 30px;
-
 background:#0a3b63;
-
 color:white;
-
 border:none;
-
 border-radius:6px;
-
 cursor:pointer;
-
 font-weight:bold;
-
 }
 
 .search-box button:hover{
-
 background:#145b92;
-
 }
 
 #result-count{
-
 margin:20px 0 30px;
-
 font-size:18px;
-
 color:#444;
-
 font-weight:bold;
-
 }
 
 .result{
-
 background:white;
-
 padding:25px;
-
 margin-bottom:25px;
-
 border-radius:8px;
-
 box-shadow:0 3px 10px rgba(0,0,0,.08);
-
 }
 
 .result h2{
-
 margin-top:0;
-
 margin-bottom:12px;
-
 font-size:24px;
-
 }
 
 .result h2 a{
-
 text-decoration:none;
-
 color:#0a3b63;
-
 }
 
 .result h2 a:hover{
-
 text-decoration:underline;
-
 }
 
 .meta{
-
 color:#666;
-
 font-size:15px;
-
 margin-bottom:15px;
-
 }
 
 .abstract{
-
 line-height:1.7;
-
 color:#444;
-
 margin-bottom:18px;
-
 }
 
 .read-btn{
-
 display:inline-block;
-
 padding:10px 20px;
-
 background:#0a3b63;
-
 color:white;
-
 text-decoration:none;
-
 border-radius:5px;
-
 font-weight:bold;
-
 }
 
 .read-btn:hover{
-
 background:#145b92;
-
 }
 
 footer{
-
 margin-top:80px;
-
 background:#222;
-
 color:white;
-
 padding:25px;
-
 text-align:center;
-
 }
 
 .no-results{
-
 background:white;
-
 padding:40px;
-
 border-radius:8px;
-
 text-align:center;
-
 font-size:20px;
-
 color:#666;
-
 display:none;
-
 }
 
 </style>
+
+<link rel="stylesheet" href="assets/css/header.css">
+<link rel="stylesheet" href="assets/css/header-search.css">
 
 </head>
 
 <body>
 
-<header>
-
-<h2>
-
-<img src="assets/images/up-logo.png"
-
-style="height:60px;vertical-align:middle;margin-right:12px;">
-
-Upright Publications
-
-</h2>
-
-<nav>
-
-<a href="index.html">Home</a>
-
-<a href="about.html">About</a>
-
-<a href="submission.html">Submission</a>
-
-<a href="author-guidelines.html">Author Guidelines</a>
-
-<a href="editorial-policy.html">Editorial Policy</a>
-
-<a href="publication-ethics.html">Publication Ethics</a>
-
-</nav>
-
-</header>
+<div id="site-header"></div>
 
 <div class="container">
 
@@ -276,15 +148,10 @@ Upright Publications
 <form id="searchForm">
 
 <input
-
 type="search"
-
 id="searchInput"
-
 name="q"
-
 placeholder="Search articles, authors, keywords..."
-
 required>
 
 <button type="submit">
@@ -316,6 +183,7 @@ No matching articles were found.
 </footer>
 
 <script src="assets/js/search.js"></script>
+<script src="assets/js/header-loader.js"></script>
 
 </body>
 
