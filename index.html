@@ -173,6 +173,71 @@ nav a.active{
     border-bottom:3px solid #ffd54f;
     padding-bottom:5px;
 }
+.search-box{
+
+margin:40px auto;
+
+max-width:700px;
+
+}
+
+.search-box form{
+
+display:flex;
+
+justify-content:center;
+
+gap:10px;
+
+}
+
+.search-box input{
+
+flex:1;
+
+padding:16px 18px;
+
+font-size:17px;
+
+border:1px solid #ccc;
+
+border-radius:6px;
+
+outline:none;
+
+}
+
+.search-box input:focus{
+
+border-color:#0a3b63;
+
+}
+
+.search-box button{
+
+padding:16px 28px;
+
+background:#0a3b63;
+
+color:white;
+
+border:none;
+
+border-radius:6px;
+
+cursor:pointer;
+
+font-size:16px;
+
+font-weight:bold;
+
+}
+
+.search-box button:hover{
+
+background:#145b92;
+
+}
 </style>
 
 </head>
@@ -213,6 +278,24 @@ nav a.active{
 <p>
 Upright Publications is an international publishing platform dedicated to research, innovation, and knowledge sharing across diverse disciplines.
 </p>
+
+<div class="search-box">
+
+<form action="search-results.html" method="GET">
+
+<input
+type="search"
+name="q"
+placeholder="Search articles, authors, keywords..."
+required>
+
+<button type="submit">
+Search
+</button>
+
+</form>
+
+</div>
 
 <div class="hero-buttons">
 
