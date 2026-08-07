@@ -106,6 +106,42 @@ font-size:18px;
 text-align:justify;
 }
 
+.about-layout{
+display:grid;
+grid-template-columns:280px 1fr;
+gap:45px;
+align-items:center;
+}
+
+.about-cover img{
+width:100%;
+max-width:280px;
+display:block;
+border-radius:8px;
+box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
+
+.about-content .section-title{
+text-align:left;
+margin-top:0;
+}
+
+@media(max-width:768px){
+
+.about-layout{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.about-cover img{
+margin:auto auto 25px;
+}
+
+.about-content .section-title{
+text-align:center;
+}
+
+}
 /* ================= AIMS & SCOPE ================= */
 
 .scope-section{
@@ -291,6 +327,17 @@ Submit Manuscript
 
 <div class="container">
 
+<div class="about-layout">
+
+<div class="about-cover">
+
+<img src="tmr-cover.jpg"
+alt="Technology &amp; Management Review Cover">
+
+</div>
+
+<div class="about-content">
+
 <h2 class="section-title">
 About the Journal
 </h2>
@@ -304,6 +351,8 @@ engineering, information systems, entrepreneurship, sustainability,
 artificial intelligence, digital transformation, and related
 interdisciplinary fields.
 
+<br><br>
+
 The journal provides an international platform for researchers,
 academics, professionals, industry experts, and policymakers to
 publish original research articles, review papers, case studies,
@@ -314,7 +363,12 @@ practice, and policy.
 
 </div>
 
+</div>
+
+</div>
+
 </section>
+
 <!-- ================= AIMS & SCOPE ================= -->
 
 <section class="scope-section">
