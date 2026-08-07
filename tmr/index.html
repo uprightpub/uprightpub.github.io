@@ -6,9 +6,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Technology & Management Review</title>
+<title>Technology &amp; Management Review</title>
 
 <link rel="icon" type="image/png" href="tmr-favicon.png">
+
+<link rel="stylesheet" href="assets/css/header.css">
+<link rel="stylesheet" href="assets/css/header-search.css">
 
 <style>
 
@@ -31,165 +34,32 @@ max-width:1200px;
 margin:auto;
 }
 
-/* ================= HEADER ================= */
-
-header{
-
-background:#083b66;
-color:white;
-padding:18px 0;
-box-shadow:0 2px 8px rgba(0,0,0,.15);
-
-}
-
-.header-flex{
-
-display:flex;
-align-items:center;
-justify-content:space-between;
-flex-wrap:wrap;
-
-}
-
-.logo-area{
-
-display:flex;
-align-items:center;
-
-}
-
-.logo-area img{
-
-width:90px;
-margin-right:18px;
-
-}
-
-.logo-area h1{
-
-font-size:32px;
-margin-bottom:5px;
-
-}
-
-.logo-area p{
-
-font-size:15px;
-opacity:.95;
-
-}
-
-/* ================= BADGES ================= */
-
-.badges{
-
-margin-top:10px;
-
-}
-
-.badges span{
-
-display:inline-block;
-background:#ffffff22;
-padding:6px 12px;
-margin:4px;
-border-radius:20px;
-font-size:13px;
-
-}
-
-/* ================= NAVIGATION ================= */
-
-nav{
-
-margin-top:20px;
-text-align:center;
-
-}
-
-nav a{
-
-display:inline-block;
-color:white;
-text-decoration:none;
-padding:12px 18px;
-font-weight:bold;
-transition:.3s;
-
-}
-
-#searchBox{
-    margin-left:20px;
-    width:180px;
-    padding:8px 12px;
-    border:1px solid rgba(255,255,255,.35);
-    border-radius:20px;
-    background:#25598a;
-    color:#fff;
-    font-size:14px;
-    outline:none;
-}
-
-#searchBox::placeholder{
-    color:#dbe8f4;
-}
-
-#searchBox:focus{
-    background:#ffffff;
-    color:#222;
-    border-color:#ffffff;
-}
-
-nav a:hover{
-
-background:#0d5b97;
-border-radius:5px;
-
-}
-
-nav a.active{
-
-background:white;
-color:#083b66;
-border-radius:5px;
-
-}
-
 /* ================= HERO ================= */
 
 .hero{
-
 background:white;
 padding:90px 20px;
 text-align:center;
-
 }
 
 .hero h2{
-
 font-size:42px;
 color:#083b66;
 margin-bottom:20px;
-
 }
 
 .hero p{
-
 font-size:20px;
 max-width:900px;
 margin:auto;
 color:#555;
-
 }
 
 .hero-buttons{
-
 margin-top:40px;
-
 }
 
 .hero-buttons a{
-
 display:inline-block;
 padding:15px 35px;
 margin:10px;
@@ -197,32 +67,172 @@ text-decoration:none;
 border-radius:6px;
 font-weight:bold;
 transition:.3s;
-
 }
 
 .btn-primary{
-
 background:#083b66;
 color:white;
-
 }
 
 .btn-primary:hover{
-
 background:#0d5b97;
-
 }
 
 .btn-secondary{
-
 background:#e8eef6;
 color:#083b66;
-
 }
 
 .btn-secondary:hover{
-
 background:#d6e2ef;
+}
+
+/* ================= ABOUT ================= */
+
+.about-section{
+padding:70px 0;
+background:#ffffff;
+}
+
+.section-title{
+text-align:center;
+color:#083b66;
+font-size:34px;
+margin-bottom:30px;
+}
+
+.about-text{
+font-size:18px;
+text-align:justify;
+}
+
+/* ================= AIMS & SCOPE ================= */
+
+.scope-section{
+padding:70px 0;
+background:#eef4fa;
+}
+
+.scope-title{
+text-align:center;
+color:#083b66;
+font-size:34px;
+margin-bottom:40px;
+}
+
+.scope-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+}
+
+.scope-card{
+background:white;
+padding:25px;
+border-radius:8px;
+box-shadow:0 3px 10px rgba(0,0,0,.08);
+}
+
+.scope-card h3{
+color:#083b66;
+margin-bottom:15px;
+}
+
+.scope-card ul{
+padding-left:22px;
+}
+
+/* ================= CONTACT ================= */
+
+.contact-section{
+padding:70px 0;
+background:#eef4fa;
+}
+
+.contact-title{
+text-align:center;
+color:#083b66;
+font-size:34px;
+margin-bottom:35px;
+}
+
+.contact-box{
+max-width:700px;
+margin:auto;
+background:white;
+padding:35px;
+border-radius:10px;
+box-shadow:0 3px 10px rgba(0,0,0,.08);
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+background:#083b66;
+color:white;
+padding:40px 0;
+margin-top:0;
+}
+
+.footer-content{
+text-align:center;
+}
+
+.footer-content img{
+width:70px;
+margin-bottom:15px;
+}
+
+.footer-content h3{
+margin-bottom:10px;
+}
+
+.footer-content .journal-description{
+margin-bottom:10px;
+}
+
+.footer-content .copyright{
+font-size:14px;
+opacity:.9;
+}
+
+.footer-content .publisher{
+font-size:14px;
+opacity:.9;
+margin-top:8px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width:900px){
+
+.hero{
+padding:60px 20px;
+}
+
+.hero h2{
+font-size:30px;
+}
+
+.hero p{
+font-size:17px;
+}
+
+.hero-buttons a{
+display:block;
+margin:15px auto;
+max-width:280px;
+}
+
+.section-title,
+.scope-title,
+.contact-title{
+font-size:30px;
+}
+
+.about-text{
+font-size:17px;
+}
 
 }
 
@@ -232,80 +242,19 @@ background:#d6e2ef;
 
 <body>
 
-<header>
-
-<div class="container">
-
-<div class="header-flex">
-
-<div class="logo-area">
-
-<img src="tmr-logo.png" alt="Technology & Management Review">
-
-<div>
-
-<h1>Technology & Management Review</h1>
-
-<p>
-Scholarly Journal for Technology, Management and Interdisciplinary Research
-</p>
-
-<div class="badges">
-
-<span>Open Access</span>
-
-<span>Fast Peer Review</span>
-
-<span>Rapid Publication</span>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<nav>
-
-<a href="index.html" class="active">Home</a>
-
-<a href="editorial-board.html">Editorial Board</a>
-
-<a href="archives.html">Archives</a>
-
-<a href="https://uprightpub.github.io/author-guidelines.html"
-   target="_blank"
-   rel="noopener noreferrer">
-    Author Guidelines
-</a>
-
-<a href="https://uprightpub.github.io/publication-ethics.html" target="_blank">Publication Ethics</a>
-
-<a href="https://uprightpub.github.io/submission.html" target="_blank">Manuscript Submission</a>
-
-<input
-    type="text"
-    id="searchBox"
-    placeholder="Search..."
->
-</nav>
-
-</div>
-
-</header>
+<div id="site-header"></div>
 
 <section class="hero">
 
 <div class="container">
 
 <h2>
-Welcome to Technology & Management Review
+Welcome to Technology &amp; Management Review
 </h2>
 
 <p>
 
-Technology & Management Review (TMR) is an international,
+Technology &amp; Management Review (TMR) is an international,
 peer-reviewed, open-access scholarly journal committed to
 publishing high-quality research in technology, management,
 innovation, business, engineering, and interdisciplinary studies.
@@ -314,14 +263,18 @@ innovation, business, engineering, and interdisciplinary studies.
 
 <div class="hero-buttons">
 
-<a href="https://publicationslist.org/up"
+<a
+href="https://publicationslist.org/up"
 target="_blank"
+rel="noopener noreferrer"
 class="btn-primary">
 Visit Publications List
 </a>
 
-<a href="https://uprightpub.github.io/submission.html"
+<a
+href="https://uprightpub.github.io/submission.html"
 target="_blank"
+rel="noopener noreferrer"
 class="btn-secondary">
 Submit Manuscript
 </a>
@@ -331,19 +284,20 @@ Submit Manuscript
 </div>
 
 </section>
+
 <!-- ================= ABOUT ================= -->
 
-<section style="padding:70px 0;background:#ffffff;">
+<section class="about-section">
 
 <div class="container">
 
-<h2 style="text-align:center;color:#083b66;font-size:34px;margin-bottom:30px;">
+<h2 class="section-title">
 About the Journal
 </h2>
 
-<p style="font-size:18px;text-align:justify;">
+<p class="about-text">
 
-Technology & Management Review (TMR) is an international,
+Technology &amp; Management Review (TMR) is an international,
 peer-reviewed, open-access scholarly journal dedicated to advancing
 knowledge in technology, management, innovation, business,
 engineering, information systems, entrepreneurship, sustainability,
@@ -361,22 +315,21 @@ practice, and policy.
 </div>
 
 </section>
-
 <!-- ================= AIMS & SCOPE ================= -->
 
-<section style="padding:70px 0;background:#eef4fa;">
+<section class="scope-section">
 
 <div class="container">
 
-<h2 style="text-align:center;color:#083b66;font-size:34px;margin-bottom:40px;">
-Aims & Scope
+<h2 class="scope-title">
+Aims &amp; Scope
 </h2>
 
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px;">
+<div class="scope-grid">
 
-<div style="background:white;padding:25px;border-radius:8px;box-shadow:0 3px 10px rgba(0,0,0,.08);">
+<div class="scope-card">
 
-<h3 style="color:#083b66;margin-bottom:15px;">
+<h3>
 Technology
 </h3>
 
@@ -400,9 +353,9 @@ Technology
 
 </div>
 
-<div style="background:white;padding:25px;border-radius:8px;box-shadow:0 3px 10px rgba(0,0,0,.08);">
+<div class="scope-card">
 
-<h3 style="color:#083b66;margin-bottom:15px;">
+<h3>
 Management
 </h3>
 
@@ -426,9 +379,9 @@ Management
 
 </div>
 
-<div style="background:white;padding:25px;border-radius:8px;box-shadow:0 3px 10px rgba(0,0,0,.08);">
+<div class="scope-card">
 
-<h3 style="color:#083b66;margin-bottom:15px;">
+<h3>
 Interdisciplinary Studies
 </h3>
 
@@ -460,132 +413,77 @@ Interdisciplinary Studies
 
 <!-- ================= CONTACT ================= -->
 
-<section style="padding:70px 0;background:#eef4fa;">
+<section class="contact-section">
 
 <div class="container">
 
-<h2 style="text-align:center;color:#083b66;font-size:34px;margin-bottom:35px;">
+<h2 class="contact-title">
 Contact
 </h2>
 
-<div style="max-width:700px;margin:auto;background:white;padding:35px;border-radius:10px;box-shadow:0 3px 10px rgba(0,0,0,.08);">
+<div class="contact-box">
 
-<p><strong>Publisher:</strong> Upright Publications</p>
+<p>
+<strong>Publisher:</strong> Upright Publications
+</p>
 
-<p><strong>Journal:</strong> Technology &amp; Management Review (TMR)</p>
+<p>
+<strong>Journal:</strong> Technology &amp; Management Review (TMR)
+</p>
 
-<p><strong>Email:</strong> tmreview.sg@gmail.com</p>
+<p>
+<strong>Email:</strong> tmreview.sg@gmail.com
+</p>
 
-<p><strong>Website:</strong> https://uprightpub.github.io/</p>
+<p>
+<strong>Website:</strong> https://uprightpub.github.io/
+</p>
 
-<p><strong>Submission:</strong> https://uprightpub.github.io/submission.html</p>
+<p>
+<strong>Submission:</strong> https://uprightpub.github.io/submission.html
+</p>
 
 </div>
 
 </div>
 
 </section>
-
 <!-- ================= FOOTER ================= -->
 
-<footer style="background:#083b66;color:white;padding:40px 0;margin-top:0;">
+<footer>
 
-<div class="container" style="text-align:center;">
+<div class="container">
 
-<img src="tmr-logo.png"
-alt="TMR Logo"
-style="width:70px;margin-bottom:15px;">
+<div class="footer-content">
 
-<h3 style="margin-bottom:10px;">
+<img
+src="tmr-logo.png"
+alt="Technology &amp; Management Review Logo">
+
+<h3>
 Technology &amp; Management Review
 </h3>
 
-<p style="margin-bottom:10px;">
+<p class="journal-description">
 An International Peer-Reviewed Open Access Journal
 </p>
 
-<p style="font-size:14px;opacity:.9;">
+<p class="copyright">
 &copy; 2026 Technology &amp; Management Review. All Rights Reserved.
 </p>
 
-<p style="font-size:14px;opacity:.9;margin-top:8px;">
+<p class="publisher">
 Published by Upright Publications
 </p>
 
 </div>
 
+</div>
+
 </footer>
 
-<!-- ================= RESPONSIVE ================= -->
-
-<style>
-
-@media (max-width:900px){
-
-.header-flex{
-
-flex-direction:column;
-text-align:center;
-
-}
-
-.logo-area{
-
-flex-direction:column;
-
-}
-
-.logo-area img{
-
-margin-right:0;
-margin-bottom:15px;
-width:80px;
-
-}
-
-.logo-area h1{
-
-font-size:26px;
-
-}
-
-.hero{
-
-padding:60px 20px;
-
-}
-
-.hero h2{
-
-font-size:30px;
-
-}
-
-.hero p{
-
-font-size:17px;
-
-}
-
-nav a{
-
-display:block;
-padding:12px;
-
-}
-
-.hero-buttons a{
-
-display:block;
-margin:15px auto;
-max-width:280px;
-
-}
-
-}
-
-</style>
-
+<script src="assets/js/header-loader.js"></script>
+<script src="assets/js/header-search.js"></script>
 </body>
 
 </html>

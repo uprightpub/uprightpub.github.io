@@ -1,0 +1,149 @@
+/* ==========================================
+   TMR Master Header
+========================================== */
+
+header{
+    background:#083b66;
+    color:#ffffff;
+    padding:18px 0;
+    box-shadow:0 2px 8px rgba(0,0,0,.15);
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* ==========================================
+   Header Top
+========================================== */
+
+.header-flex{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+}
+
+.logo-area{
+    display:flex;
+    align-items:center;
+}
+
+.logo-area img{
+    width:90px;
+    margin-right:18px;
+}
+
+.logo-area h1{
+    font-size:32px;
+    margin-bottom:5px;
+}
+
+.logo-area p{
+    font-size:15px;
+    opacity:.95;
+}
+
+/* ==========================================
+   Badges
+========================================== */
+
+.badges{
+    margin-top:10px;
+}
+
+.badges span{
+    display:inline-block;
+    background:#ffffff22;
+    padding:6px 12px;
+    margin:4px;
+    border-radius:20px;
+    font-size:13px;
+}
+
+/* ==========================================
+   Navigation
+========================================== */
+
+nav{
+    margin-top:20px;
+    display:flex;
+    align-items:center;
+    gap:4px;
+}
+
+nav a{
+    display:inline-block;
+    color:#ffffff;
+    text-decoration:none;
+    padding:12px 18px;
+    font-weight:bold;
+    transition:.3s;
+    white-space:nowrap;
+}
+
+nav a:hover{
+    background:#0d5b97;
+    border-radius:5px;
+}
+
+nav a.active{
+    background:#ffffff;
+    color:#083b66;
+    border-radius:5px;
+}
+
+/* ==========================================
+   Search
+========================================== */
+
+.header-right{
+    margin-left:auto;
+    display:flex;
+    align-items:center;
+    flex-shrink:0;
+}
+
+/* ==========================================
+   Responsive
+========================================== */
+
+@media (max-width:900px){
+
+.header-flex{
+    flex-direction:column;
+    text-align:center;
+}
+
+.logo-area{
+    flex-direction:column;
+}
+
+.logo-area img{
+    width:80px;
+    margin-right:0;
+    margin-bottom:15px;
+}
+
+.logo-area h1{
+    font-size:26px;
+}
+
+nav{
+    flex-direction:column;
+    align-items:stretch;
+    gap:8px;
+}
+
+nav a{
+    display:block;
+    text-align:center;
+}
+
+.header-right{
+    margin:15px auto 0;
+}
+
+}

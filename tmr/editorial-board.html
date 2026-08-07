@@ -6,9 +6,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Editorial Board | Technology & Management Review</title>
+<title>Editorial Board | Technology &amp; Management Review</title>
 
 <link rel="icon" type="image/png" href="tmr-favicon.png">
+
+<link rel="stylesheet" href="assets/css/header.css">
+<link rel="stylesheet" href="assets/css/header-search.css">
 
 <style>
 
@@ -19,280 +22,104 @@ box-sizing:border-box;
 }
 
 body{
-
 font-family:Arial,Helvetica,sans-serif;
 background:#f6f8fb;
 color:#333;
 line-height:1.8;
-
 }
 
 .container{
-
 width:90%;
 max-width:1200px;
 margin:auto;
-
-}
-
-/* ================= HEADER ================= */
-
-header{
-
-background:#083b66;
-color:#fff;
-padding:20px 0;
-box-shadow:0 2px 8px rgba(0,0,0,.15);
-
-}
-
-.header-flex{
-
-display:flex;
-align-items:center;
-justify-content:space-between;
-flex-wrap:wrap;
-
-}
-
-.logo-area{
-
-display:flex;
-align-items:center;
-
-}
-
-.logo-area img{
-
-width:90px;
-margin-right:18px;
-
-}
-
-.logo-area h1{
-
-font-size:32px;
-margin-bottom:6px;
-
-}
-
-.logo-area p{
-
-font-size:15px;
-opacity:.95;
-
-}
-
-.badges{
-
-margin-top:10px;
-
-}
-
-.badges span{
-
-display:inline-block;
-background:#ffffff22;
-padding:6px 12px;
-margin:4px;
-border-radius:20px;
-font-size:13px;
-
-}
-
-/* ================= NAVIGATION ================= */
-
-nav{
-
-margin-top:20px;
-text-align:center;
-
-}
-
-nav a{
-
-display:inline-block;
-padding:12px 18px;
-text-decoration:none;
-color:white;
-font-weight:bold;
-transition:.3s;
-
-}
-#searchBox{
-    margin-left:20px;
-    width:180px;
-    padding:8px 12px;
-    border:1px solid rgba(255,255,255,.35);
-    border-radius:20px;
-    background:#25598a;
-    color:#fff;
-    font-size:14px;
-    outline:none;
-}
-
-#searchBox::placeholder{
-    color:#dbe8f4;
-}
-
-#searchBox:focus{
-    background:#ffffff;
-    color:#222;
-    border-color:#ffffff;
-}
-nav a:hover{
-
-background:#0d5b97;
-border-radius:5px;
-
-}
-
-nav a.active{
-
-background:white;
-color:#083b66;
-border-radius:5px;
-
 }
 
 /* ================= PAGE TITLE ================= */
 
 .page-title{
-
 text-align:center;
 padding:70px 20px 30px;
-
 }
 
 .page-title h2{
-
 font-size:46px;
 color:#083b66;
 margin-bottom:12px;
-
 }
 
 .page-title p{
-
 font-size:20px;
 color:#666;
-
 }
 
 /* ================= SECTION ================= */
 
 .section-title{
-
 font-size:34px;
 color:#083b66;
 margin:50px 0 30px;
-
 }
 
 /* ================= EDITOR CARDS ================= */
 
 .editor-grid{
-
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
 gap:25px;
-
 }
 
 .editor-card{
-
 background:white;
 padding:28px;
 border-radius:10px;
 box-shadow:0 4px 12px rgba(0,0,0,.08);
 transition:.3s;
-
 }
 
 .editor-card:hover{
-
 transform:translateY(-5px);
-
 }
 
 .editor-card h3{
-
 color:#083b66;
 font-size:24px;
 margin-bottom:12px;
-
 }
 
 .editor-card p{
-
 margin-bottom:10px;
 font-size:17px;
-
 }
 
 .label{
-
 font-weight:bold;
 color:#083b66;
-
 }
 
 /* ================= FOOTER ================= */
 
 footer{
-
 background:#083b66;
 color:white;
 text-align:center;
 padding:35px;
 margin-top:70px;
-
 }
+
+/* ================= RESPONSIVE ================= */
 
 @media(max-width:768px){
 
-.logo-area{
-
-flex-direction:column;
-text-align:center;
-
-}
-
-.logo-area img{
-
-margin-right:0;
-margin-bottom:15px;
-
-}
-
-.logo-area h1{
-
-font-size:26px;
-
-}
-
-nav a{
-
-display:block;
-
-}
-
 .page-title h2{
-
 font-size:34px;
-
 }
 
 .section-title{
-
 font-size:28px;
-
 }
 
 .editor-grid{
-
 grid-template-columns:1fr;
-
 }
 
 }
@@ -303,98 +130,18 @@ grid-template-columns:1fr;
 
 <body>
 
-<header>
-
-<div class="container">
-
-<div class="header-flex">
-
-<div class="logo-area">
-
-<img src="tmr-logo.png" alt="TMR Logo">
-
-<div>
-
-<h1>Technology & Management Review</h1>
-
-<p>
-
-Scholarly Journal for Technology, Management and Interdisciplinary Research
-
-</p>
-
-<div class="badges">
-
-<span>Open Access</span>
-
-<span>Fast Peer Review</span>
-
-<span>Rapid Publication</span>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<nav>
-
-<a href="index.html">Home</a>
-
-<a href="editorial-board.html" class="active">Editorial Board</a>
-
-<a href="archives.html">Archives</a>
-
-<a href="https://uprightpub.github.io/author-guidelines.html"
-target="_blank"
-rel="noopener noreferrer">
-
-Author Guidelines
-
-</a>
-
-<a href="https://uprightpub.github.io/publication-ethics.html"
-target="_blank"
-rel="noopener noreferrer">
-
-Publication Ethics
-
-</a>
-
-<a href="https://uprightpub.github.io/submission.html"
-target="_blank"
-rel="noopener noreferrer">
-
-Manuscript Submission
-
-</a>
-<input
-    type="text"
-    id="searchBox"
-    placeholder="Search..."
->
-</nav>
-
-</div>
-
-</header>
+<div id="site-header"></div>
 
 <section class="page-title">
 
 <div class="container">
 
 <h2>
-
 Editorial Board
-
 </h2>
 
 <p>
-
 International Editorial Team
-
 </p>
 
 </div>
@@ -404,9 +151,7 @@ International Editorial Team
 <div class="container">
 
 <h2 class="section-title">
-
 Consulting Editors
-
 </h2>
 
 <div class="editor-grid">
@@ -501,7 +246,6 @@ Electrical Engineering
 </p>
 
 </div>
-
 <div class="editor-card">
 
 <h3>RamMohan Reddy Kundavaram</h3>
@@ -630,7 +374,6 @@ Food Science and Technology
 </p>
 
 </div>
-
 <div class="editor-card">
 
 <h3>Arun Kumar Sandu</h3>
@@ -718,7 +461,7 @@ USA
 
 <p>
 <span class="label">Expertise:</span><br>
-Mechanical & Aerospace Engineering,<br>
+Mechanical &amp; Aerospace Engineering,<br>
 Composite Materials,<br>
 Experimental Mechanics
 </p>
@@ -756,34 +499,45 @@ Journal Manager
 </div>
 
 </div>
-
 <footer>
 
-<div class="container">
+<div class="container" style="text-align:center;">
 
-<img src="tmr-logo.png"
-alt="TMR Logo"
+<img
+src="tmr-logo.png"
+alt="Technology &amp; Management Review Logo"
 style="width:70px;margin-bottom:15px;">
 
 <h3 style="margin-bottom:10px;">
+
 Technology &amp; Management Review
+
 </h3>
 
 <p style="margin-bottom:10px;">
+
 An International Peer-Reviewed Open Access Journal
+
 </p>
 
 <p style="font-size:14px;opacity:.9;">
+
 Published by Upright Publications
+
 </p>
 
 <p style="font-size:14px;opacity:.9;margin-top:8px;">
+
 &copy; 2026 Technology &amp; Management Review. All Rights Reserved.
+
 </p>
 
 </div>
 
 </footer>
+
+<script src="assets/js/header-loader.js"></script>
+<script src="assets/js/header-search.js"></script>
 
 </body>
 

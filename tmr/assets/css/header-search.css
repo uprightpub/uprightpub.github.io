@@ -1,0 +1,77 @@
+/* ==========================================
+   TMR Header Search
+========================================== */
+
+.header-search{
+    position:relative;
+    display:flex;
+    align-items:center;
+}
+
+.search-icon{
+    width:42px;
+    height:42px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:none;
+    border-radius:50%;
+    background:#ffffff22;
+    color:#ffffff;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.search-icon:hover{
+    background:#ffffff33;
+}
+
+.header-search-form{
+    position:absolute;
+    top:50%;
+    right:50px;
+    transform:translateY(-50%);
+    width:0;
+    opacity:0;
+    overflow:hidden;
+    transition:all .3s ease;
+}
+
+.header-search-form.active{
+    width:280px;
+    opacity:1;
+}
+
+.header-search-form input{
+    width:100%;
+    padding:10px 14px;
+    border:none;
+    border-radius:20px;
+    outline:none;
+    font-size:14px;
+    background:#ffffff;
+    color:#333;
+}
+
+.header-search-form input::placeholder{
+    color:#777;
+}
+
+@media(max-width:900px){
+
+.header-search{
+    justify-content:center;
+}
+
+.header-search-form{
+    right:0;
+    top:55px;
+    transform:none;
+}
+
+.header-search-form.active{
+    width:250px;
+}
+
+}
