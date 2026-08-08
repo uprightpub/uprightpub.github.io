@@ -3,11 +3,28 @@
 ========================================== */
 
 header{
-    background:#083b66;
+    position:relative;
+
+    background-image:
+        linear-gradient(
+            rgba(3,38,68,.58),
+            rgba(3,38,68,.58)
+        ),
+        url("/dsr/dsr-banner.jpg");
+
+    background-size:cover;
+    background-position:center center;
+    background-repeat:no-repeat;
+
     color:#ffffff;
     padding:18px 0;
-    box-shadow:0 2px 8px rgba(0,0,0,.15);
+
+    box-shadow:0 2px 8px rgba(0,0,0,.22);
 }
+
+/* ==========================================
+   Main Container
+========================================== */
 
 .container{
     width:90%;
@@ -39,11 +56,20 @@ header{
 .logo-area h1{
     font-size:32px;
     margin-bottom:5px;
+
+    color:#ffffff;
+
+    text-shadow:
+        0 1px 3px rgba(0,0,0,.75);
 }
 
 .logo-area p{
     font-size:15px;
-    opacity:.95;
+    color:#ffffff;
+    opacity:1;
+
+    text-shadow:
+        0 1px 3px rgba(0,0,0,.75);
 }
 
 /* ==========================================
@@ -56,11 +82,22 @@ header{
 
 .badges span{
     display:inline-block;
-    background:#ffffff22;
+
+    background:rgba(8,59,102,.72);
+
+    color:#ffffff;
+
     padding:6px 12px;
     margin:4px;
+
     border-radius:20px;
+
     font-size:13px;
+
+    border:1px solid rgba(255,255,255,.18);
+
+    text-shadow:
+        0 1px 2px rgba(0,0,0,.45);
 }
 
 /* ==========================================
@@ -69,30 +106,53 @@ header{
 
 nav{
     margin-top:20px;
+
     display:flex;
     align-items:center;
+
     gap:4px;
 }
 
 nav a{
     display:inline-block;
+
     color:#ffffff;
+
     text-decoration:none;
+
     padding:12px 18px;
+
     font-weight:bold;
+
     transition:.3s;
+
     white-space:nowrap;
+
+    text-shadow:
+        0 1px 3px rgba(0,0,0,.85);
 }
 
 nav a:hover{
-    background:#0d5b97;
+    background:rgba(8,59,102,.72);
+
     border-radius:5px;
 }
 
+/* ==========================================
+   Active Menu
+========================================== */
+
 nav a.active{
     background:#ffffff;
+
     color:#083b66;
+
     border-radius:5px;
+
+    text-shadow:none;
+
+    box-shadow:
+        0 2px 6px rgba(0,0,0,.18);
 }
 
 /* ==========================================
@@ -101,9 +161,24 @@ nav a.active{
 
 .header-right{
     margin-left:auto;
+
     display:flex;
     align-items:center;
+
     flex-shrink:0;
+}
+
+/* ==========================================
+   Search Button Visibility
+========================================== */
+
+.search-icon{
+    background:rgba(8,59,102,.72) !important;
+
+    border:1px solid rgba(255,255,255,.15) !important;
+
+    box-shadow:
+        0 2px 6px rgba(0,0,0,.20);
 }
 
 /* ==========================================
@@ -111,6 +186,11 @@ nav a.active{
 ========================================== */
 
 @media(max-width:900px){
+
+header{
+    background-position:center center;
+    background-size:cover;
+}
 
 .header-flex{
     flex-direction:column;
@@ -123,6 +203,7 @@ nav a.active{
 
 .logo-area img{
     width:80px;
+
     margin-right:0;
     margin-bottom:15px;
 }
@@ -133,13 +214,23 @@ nav a.active{
 
 nav{
     flex-direction:column;
+
     align-items:stretch;
+
     gap:8px;
 }
 
 nav a{
     display:block;
+
     text-align:center;
+
+    background:rgba(8,59,102,.40);
+}
+
+nav a.active{
+    background:#ffffff;
+    color:#083b66;
 }
 
 .header-right{
