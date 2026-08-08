@@ -1,0 +1,46 @@
+name: Build DSR Search Index
+
+on:
+  push:
+    paths:
+      - "dsr/issues/**/*.html"
+      - ".github/scripts/build_dsr_search_index.py"
+      - ".github/workflows/dsr-search-index.yml"
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-search-index:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Build DSR search index
+        run: |
+          python .github/scripts/build_dsr_search_index.py
+
+      - name: Commit updated search index
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add dsr/assets/search-index.json
+
+          if git diff --cached --quiet; then
+            echo "DSR search index is already up to date."
+          else
+            git commit -m "Auto-update DSR search index"
+            git push
+          fi
