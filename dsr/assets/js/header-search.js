@@ -8,6 +8,10 @@ function initializeHeaderSearch() {
 
     if (!searchToggle || !searchForm) return;
 
+    if (searchToggle.dataset.initialized === "true") return;
+
+    searchToggle.dataset.initialized = "true";
+
     const searchInput =
         searchForm.querySelector("input[type='search']");
 
@@ -52,15 +56,19 @@ function initializeHeaderSearch() {
 
         event.preventDefault();
 
-        const keyword = searchInput.value.trim();
+        const keyword =
+            searchInput.value.trim();
 
         if (keyword === "") {
+
             searchInput.focus();
             return;
+
         }
 
         window.location.href =
-            "/search-results.html?q=" + encodeURIComponent(keyword);
+            "/dsr/search-results.html?q=" +
+            encodeURIComponent(keyword);
 
     });
 

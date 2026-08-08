@@ -45,15 +45,15 @@ margin-bottom:40px;
 
 .search-box form{
 display:flex;
-gap:10px;
+gap:12px;
 }
 
 .search-box input{
 flex:1;
-padding:16px;
+padding:16px 18px;
 font-size:17px;
 border:1px solid #ccc;
-border-radius:6px;
+border-radius:7px;
 outline:none;
 }
 
@@ -62,9 +62,9 @@ border-color:#083b66;
 }
 
 .search-box button{
-padding:16px 30px;
+padding:16px 32px;
 border:none;
-border-radius:6px;
+border-radius:7px;
 background:#083b66;
 color:#fff;
 font-size:16px;
@@ -77,22 +77,32 @@ background:#0d5b97;
 }
 
 #result-count{
-margin-bottom:30px;
-font-size:18px;
+font-size:19px;
 font-weight:bold;
-color:#444;
+margin-bottom:30px;
 }
 
 .result{
 background:#fff;
-padding:25px;
-margin-bottom:25px;
-border-radius:8px;
+padding:26px 28px;
+margin-bottom:24px;
+border-radius:9px;
 box-shadow:0 3px 10px rgba(0,0,0,.08);
 }
 
+.result-journal{
+display:inline-block;
+font-size:13px;
+font-weight:bold;
+background:#e8eef6;
+color:#083b66;
+padding:5px 10px;
+border-radius:15px;
+margin-bottom:12px;
+}
+
 .result h2{
-font-size:24px;
+font-size:23px;
 margin-bottom:10px;
 }
 
@@ -118,13 +128,14 @@ margin-bottom:12px;
 }
 
 .abstract{
+font-size:16px;
 color:#444;
-margin-bottom:20px;
+margin-bottom:18px;
 }
 
 .read-btn{
 display:inline-block;
-padding:10px 20px;
+padding:9px 18px;
 background:#083b66;
 color:#fff;
 text-decoration:none;
@@ -142,7 +153,7 @@ background:#fff;
 padding:40px;
 border-radius:8px;
 text-align:center;
-font-size:20px;
+font-size:19px;
 color:#666;
 }
 
@@ -163,7 +174,7 @@ text-align:center;
 margin-top:60px;
 }
 
-@media(max-width:900px){
+@media(max-width:800px){
 
 .search-box form{
 flex-direction:column;
@@ -195,7 +206,7 @@ width:100%;
 type="search"
 id="searchInput"
 name="q"
-placeholder="Search articles, authors, keywords..."
+placeholder="Search all journals, articles, authors, years..."
 required>
 
 <button type="submit">
@@ -261,7 +272,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     if (!query) {
 
         resultCount.textContent =
-            "Enter a keyword to search the journal.";
+            "Enter a keyword to search Upright Publications.";
 
         return;
 
@@ -270,14 +281,16 @@ document.addEventListener("DOMContentLoaded", async function () {
     try {
 
         const response = await fetch(
-            "/dsr/assets/search-index.json",
+            "/assets/search-index.json",
             {
                 cache:"no-store"
             }
         );
 
         if (!response.ok) {
-            throw new Error("DSR search index has not been generated yet.");
+            throw new Error(
+                "Global search index could not be loaded."
+            );
         }
 
         const searchData =
@@ -294,6 +307,8 @@ document.addEventListener("DOMContentLoaded", async function () {
 
                 const searchableText = [
 
+                    item.journal,
+                    item.journal_code,
                     item.title,
                     item.authors,
                     item.keywords,
@@ -328,7 +343,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         errorMessage.style.display = "block";
 
         errorMessage.textContent =
-            "The DSR search index has not been generated yet.";
+            "The global search index is temporarily unavailable.";
 
         resultCount.textContent = "";
 
@@ -342,7 +357,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         if(results.length === 0){
 
             resultCount.textContent =
-                '0 results found for "' +
+                '0 result(s) found for "' +
                 keyword +
                 '".';
 
@@ -360,12 +375,34 @@ document.addEventListener("DOMContentLoaded", async function () {
             keyword +
             '".';
 
+
         results.forEach(function(item){
 
             const card =
                 document.createElement("article");
 
             card.className = "result";
+
+
+            if(item.journal){
+
+                const journal =
+                    document.createElement("div");
+
+                journal.className =
+                    "result-journal";
+
+                journal.textContent =
+                    item.journal_code
+                    ? item.journal_code +
+                      " • " +
+                      item.journal
+                    : item.journal;
+
+                card.appendChild(journal);
+
+            }
+
 
             const title =
                 document.createElement("h2");
@@ -392,11 +429,15 @@ document.addEventListener("DOMContentLoaded", async function () {
             }
 
             if(item.volume){
-                metaParts.push("Volume " + item.volume);
+                metaParts.push(
+                    "Volume " + item.volume
+                );
             }
 
             if(item.issue){
-                metaParts.push("Issue " + item.issue);
+                metaParts.push(
+                    "Issue " + item.issue
+                );
             }
 
             if(item.year){
@@ -404,7 +445,9 @@ document.addEventListener("DOMContentLoaded", async function () {
             }
 
             if(item.pages){
-                metaParts.push("Pages " + item.pages);
+                metaParts.push(
+                    "Pages " + item.pages
+                );
             }
 
             meta.textContent =
