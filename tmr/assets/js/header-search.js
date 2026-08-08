@@ -17,10 +17,10 @@ function initializeHeaderSearch() {
 
     if (!searchInput) return;
 
-    searchToggle.addEventListener("click", function (e) {
+    searchToggle.addEventListener("click", function (event) {
 
-        e.preventDefault();
-        e.stopPropagation();
+        event.preventDefault();
+        event.stopPropagation();
 
         searchForm.classList.toggle("active");
 
@@ -30,20 +30,20 @@ function initializeHeaderSearch() {
 
     });
 
-    document.addEventListener("click", function (e) {
+    document.addEventListener("click", function (event) {
 
         if (
-            !searchForm.contains(e.target) &&
-            !searchToggle.contains(e.target)
+            !searchForm.contains(event.target) &&
+            !searchToggle.contains(event.target)
         ) {
             searchForm.classList.remove("active");
         }
 
     });
 
-    searchInput.addEventListener("keydown", function (e) {
+    searchInput.addEventListener("keydown", function (event) {
 
-        if (e.key === "Escape") {
+        if (event.key === "Escape") {
 
             searchForm.classList.remove("active");
             searchToggle.focus();
@@ -52,9 +52,9 @@ function initializeHeaderSearch() {
 
     });
 
-    searchForm.addEventListener("submit", function (e) {
+    searchForm.addEventListener("submit", function (event) {
 
-        e.preventDefault();
+        event.preventDefault();
 
         const keyword =
             searchInput.value.trim();
@@ -67,7 +67,7 @@ function initializeHeaderSearch() {
         }
 
         window.location.href =
-            "/search-results.html?q=" +
+            "/tmr/search-results.html?q=" +
             encodeURIComponent(keyword);
 
     });

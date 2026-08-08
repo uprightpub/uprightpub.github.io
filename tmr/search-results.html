@@ -45,15 +45,15 @@ margin-bottom:40px;
 
 .search-box form{
 display:flex;
-gap:10px;
+gap:12px;
 }
 
 .search-box input{
 flex:1;
-padding:16px;
+padding:16px 18px;
 font-size:17px;
 border:1px solid #ccc;
-border-radius:6px;
+border-radius:7px;
 outline:none;
 }
 
@@ -62,9 +62,9 @@ border-color:#083b66;
 }
 
 .search-box button{
-padding:16px 30px;
+padding:16px 32px;
 border:none;
-border-radius:6px;
+border-radius:7px;
 background:#083b66;
 color:#fff;
 font-size:16px;
@@ -77,22 +77,32 @@ background:#0d5b97;
 }
 
 #result-count{
-margin-bottom:30px;
-font-size:18px;
+font-size:19px;
 font-weight:bold;
-color:#444;
+margin-bottom:30px;
 }
 
 .result{
 background:#fff;
-padding:25px;
-margin-bottom:25px;
-border-radius:8px;
+padding:26px 28px;
+margin-bottom:24px;
+border-radius:9px;
 box-shadow:0 3px 10px rgba(0,0,0,.08);
 }
 
+.result-journal{
+display:inline-block;
+font-size:13px;
+font-weight:bold;
+background:#e8eef6;
+color:#083b66;
+padding:5px 10px;
+border-radius:15px;
+margin-bottom:12px;
+}
+
 .result h2{
-font-size:24px;
+font-size:23px;
 margin-bottom:10px;
 }
 
@@ -118,13 +128,14 @@ margin-bottom:12px;
 }
 
 .abstract{
+font-size:16px;
 color:#444;
-margin-bottom:20px;
+margin-bottom:18px;
 }
 
 .read-btn{
 display:inline-block;
-padding:10px 20px;
+padding:9px 18px;
 background:#083b66;
 color:#fff;
 text-decoration:none;
@@ -142,8 +153,17 @@ background:#fff;
 padding:40px;
 border-radius:8px;
 text-align:center;
-font-size:20px;
+font-size:19px;
 color:#666;
+}
+
+.error-message{
+display:none;
+background:#fff4f4;
+padding:25px;
+border-radius:8px;
+color:#a33;
+margin-bottom:25px;
 }
 
 footer{
@@ -154,7 +174,7 @@ text-align:center;
 margin-top:60px;
 }
 
-@media(max-width:900px){
+@media(max-width:800px){
 
 .search-box form{
 flex-direction:column;
@@ -180,15 +200,13 @@ width:100%;
 
 <div class="search-box">
 
-<form
-action="/tmr/search-results.html"
-method="GET">
+<form action="/tmr/search-results.html" method="GET">
 
 <input
 type="search"
 id="searchInput"
 name="q"
-placeholder="Search articles, authors, keywords..."
+placeholder="Search all journals, articles, authors, years..."
 required>
 
 <button type="submit">
@@ -199,16 +217,14 @@ Search
 
 </div>
 
+<div id="error-message" class="error-message"></div>
+
 <div id="result-count"></div>
 
 <div id="results"></div>
 
-<div
-id="no-results"
-class="no-results">
-
+<div id="no-results" class="no-results">
 No matching results were found.
-
 </div>
 
 </div>
@@ -223,6 +239,7 @@ No matching results were found.
 
 </footer>
 
+<script src="/tmr/assets/js/header-search.js"></script>
 <script src="/tmr/assets/js/header-loader.js"></script>
 
 <script>
@@ -241,6 +258,9 @@ document.addEventListener("DOMContentLoaded", async function () {
     const noResults =
         document.getElementById("no-results");
 
+    const errorMessage =
+        document.getElementById("error-message");
+
     const params =
         new URLSearchParams(window.location.search);
 
@@ -252,7 +272,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     if (!query) {
 
         resultCount.textContent =
-            "Enter a keyword to search the journal.";
+            "Enter a keyword to search Upright Publications.";
 
         return;
 
@@ -261,15 +281,15 @@ document.addEventListener("DOMContentLoaded", async function () {
     try {
 
         const response = await fetch(
-            "/tmr/assets/search-index.json",
+            "/assets/search-index.json",
             {
-                cache: "no-store"
+                cache:"no-store"
             }
         );
 
         if (!response.ok) {
             throw new Error(
-                "Search index could not be loaded."
+                "Global search index could not be loaded."
             );
         }
 
@@ -283,10 +303,12 @@ document.addEventListener("DOMContentLoaded", async function () {
             .filter(Boolean);
 
         const results =
-            searchData.filter(function (item) {
+            searchData.filter(function(item){
 
                 const searchableText = [
 
+                    item.journal,
+                    item.journal_code,
                     item.title,
                     item.authors,
                     item.keywords,
@@ -302,57 +324,50 @@ document.addEventListener("DOMContentLoaded", async function () {
                 .join(" ")
                 .toLowerCase();
 
-                return searchWords.every(
-                    function (word) {
+                return searchWords.every(function(word){
 
-                        return searchableText
-                            .includes(word);
+                    return searchableText.includes(word);
 
-                    }
-                );
+                });
 
             });
 
-        renderResults(
-            results,
-            query
-        );
+        renderResults(results, query);
 
     }
 
-    catch (error) {
+    catch(error){
 
         console.error(error);
 
-        resultCount.textContent =
-            "Search index is temporarily unavailable.";
+        errorMessage.style.display = "block";
+
+        errorMessage.textContent =
+            "The global search index is temporarily unavailable.";
+
+        resultCount.textContent = "";
 
     }
 
 
-    function renderResults(
-        results,
-        keyword
-    ) {
+    function renderResults(results, keyword){
 
         resultsContainer.innerHTML = "";
 
-        if (results.length === 0) {
+        if(results.length === 0){
 
             resultCount.textContent =
-                '0 results found for "' +
+                '0 result(s) found for "' +
                 keyword +
                 '".';
 
-            noResults.style.display =
-                "block";
+            noResults.style.display = "block";
 
             return;
 
         }
 
-        noResults.style.display =
-            "none";
+        noResults.style.display = "none";
 
         resultCount.textContent =
             results.length +
@@ -360,13 +375,34 @@ document.addEventListener("DOMContentLoaded", async function () {
             keyword +
             '".';
 
-        results.forEach(function (item) {
+
+        results.forEach(function(item){
 
             const card =
                 document.createElement("article");
 
-            card.className =
-                "result";
+            card.className = "result";
+
+
+            if(item.journal){
+
+                const journal =
+                    document.createElement("div");
+
+                journal.className =
+                    "result-journal";
+
+                journal.textContent =
+                    item.journal_code
+                    ? item.journal_code +
+                      " • " +
+                      item.journal
+                    : item.journal;
+
+                card.appendChild(journal);
+
+            }
+
 
             const title =
                 document.createElement("h2");
@@ -374,53 +410,43 @@ document.addEventListener("DOMContentLoaded", async function () {
             const link =
                 document.createElement("a");
 
-            link.href =
-                item.url;
-
-            link.textContent =
-                item.title;
+            link.href = item.url;
+            link.textContent = item.title;
 
             title.appendChild(link);
-
             card.appendChild(title);
 
 
             const meta =
                 document.createElement("div");
 
-            meta.className =
-                "meta";
+            meta.className = "meta";
 
             const metaParts = [];
 
-            if (item.type) {
+            if(item.type){
                 metaParts.push(item.type);
             }
 
-            if (item.volume) {
+            if(item.volume){
                 metaParts.push(
-                    "Volume " +
-                    item.volume
+                    "Volume " + item.volume
                 );
             }
 
-            if (item.issue) {
+            if(item.issue){
                 metaParts.push(
-                    "Issue " +
-                    item.issue
+                    "Issue " + item.issue
                 );
             }
 
-            if (item.year) {
-                metaParts.push(
-                    item.year
-                );
+            if(item.year){
+                metaParts.push(item.year);
             }
 
-            if (item.pages) {
+            if(item.pages){
                 metaParts.push(
-                    "Pages " +
-                    item.pages
+                    "Pages " + item.pages
                 );
             }
 
@@ -430,32 +456,27 @@ document.addEventListener("DOMContentLoaded", async function () {
             card.appendChild(meta);
 
 
-            if (item.authors) {
+            if(item.authors){
 
                 const authors =
                     document.createElement("div");
 
-                authors.className =
-                    "authors";
+                authors.className = "authors";
 
                 authors.textContent =
-                    item.authors.replaceAll(
-                        ";",
-                        ","
-                    );
+                    item.authors.replaceAll(";", ",");
 
                 card.appendChild(authors);
 
             }
 
 
-            if (item.abstract) {
+            if(item.abstract){
 
                 const abstract =
                     document.createElement("div");
 
-                abstract.className =
-                    "abstract";
+                abstract.className = "abstract";
 
                 abstract.textContent =
                     item.abstract;
@@ -468,24 +489,17 @@ document.addEventListener("DOMContentLoaded", async function () {
             const openButton =
                 document.createElement("a");
 
-            openButton.className =
-                "read-btn";
-
-            openButton.href =
-                item.url;
+            openButton.className = "read-btn";
+            openButton.href = item.url;
 
             openButton.textContent =
                 item.type === "article"
                 ? "View Article"
                 : "Open Page";
 
-            card.appendChild(
-                openButton
-            );
+            card.appendChild(openButton);
 
-            resultsContainer.appendChild(
-                card
-            );
+            resultsContainer.appendChild(card);
 
         });
 
