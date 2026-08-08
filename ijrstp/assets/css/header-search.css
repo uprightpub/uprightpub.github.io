@@ -1,0 +1,91 @@
+/* ==========================================
+   DSR Header Search
+========================================== */
+
+.header-search{
+    display:flex;
+    align-items:center;
+    position:relative;
+}
+
+/* Search Icon */
+
+.search-icon{
+    width:42px;
+    height:42px;
+    border:none;
+    border-radius:50%;
+    background:rgba(255,255,255,.12);
+    color:#ffffff;
+    font-size:18px;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:.3s;
+}
+
+.search-icon:hover{
+    background:rgba(255,255,255,.22);
+}
+
+/* Search Form */
+
+.header-search-form{
+    width:0;
+    overflow:hidden;
+    opacity:0;
+    margin-left:0;
+    transition:
+        width .3s ease,
+        opacity .3s ease,
+        margin-left .3s ease;
+}
+
+/* Expanded Search */
+
+.header-search-form.active{
+    width:250px;
+    opacity:1;
+    margin-left:8px;
+}
+
+/* Search Input */
+
+.header-search-form input{
+    width:100%;
+    height:42px;
+    padding:8px 14px;
+    border:1px solid rgba(255,255,255,.35);
+    border-radius:21px;
+    background:#25598a;
+    color:#ffffff;
+    font-size:14px;
+    outline:none;
+}
+
+.header-search-form input::placeholder{
+    color:#dbe8f4;
+}
+
+.header-search-form input:focus{
+    background:#ffffff;
+    color:#222222;
+    border-color:#ffffff;
+}
+
+/* ==========================================
+   Responsive
+========================================== */
+
+@media(max-width:900px){
+
+.header-search{
+    justify-content:center;
+}
+
+.header-search-form.active{
+    width:240px;
+}
+
+}
