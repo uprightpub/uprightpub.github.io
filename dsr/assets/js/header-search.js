@@ -11,6 +11,8 @@ function initializeHeaderSearch() {
     const searchInput =
         searchForm.querySelector("input[type='search']");
 
+    if (!searchInput) return;
+
     searchToggle.addEventListener("click", function (event) {
 
         event.preventDefault();
@@ -48,15 +50,17 @@ function initializeHeaderSearch() {
 
     searchForm.addEventListener("submit", function (event) {
 
-        const keyword =
-            searchInput.value.trim();
+        event.preventDefault();
+
+        const keyword = searchInput.value.trim();
 
         if (keyword === "") {
-
-            event.preventDefault();
             searchInput.focus();
-
+            return;
         }
+
+        window.location.href =
+            "/search-results.html?q=" + encodeURIComponent(keyword);
 
     });
 
