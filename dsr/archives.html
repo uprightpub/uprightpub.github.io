@@ -8,12 +8,26 @@
 
 <title>Archives | Digitalization &amp; Sustainability Review</title>
 
-<link rel="icon" type="image/png" href="dsr-favicon.png">
+<meta
+name="description"
+content="Archives of Digitalization & Sustainability Review. Browse published volumes and issues from 2021 onward.">
 
-<link rel="stylesheet" href="assets/css/header.css">
-<link rel="stylesheet" href="assets/css/header-search.css">
+<link
+rel="icon"
+type="image/png"
+href="/dsr/dsr-favicon.png">
+
+<link
+rel="stylesheet"
+href="/dsr/assets/css/header.css">
+
+<link
+rel="stylesheet"
+href="/dsr/assets/css/header-search.css">
 
 <style>
+
+/* ================= GLOBAL ================= */
 
 *{
 margin:0;
@@ -23,7 +37,7 @@ box-sizing:border-box;
 
 body{
 font-family:Arial,Helvetica,sans-serif;
-background:#f6f8fb;
+background:#f5f8fc;
 color:#333;
 line-height:1.7;
 }
@@ -34,140 +48,251 @@ max-width:1200px;
 margin:auto;
 }
 
-/* ================= PAGE TITLE ================= */
+/* ================= PAGE HERO ================= */
 
-.page-title{
-background:#ffffff;
-text-align:center;
-padding:65px 20px 45px;
-border-bottom:1px solid #e5e9ee;
+.page-hero{
+width:100%;
+height:360px;
+
+background-image:
+linear-gradient(
+rgba(0,0,0,.16),
+rgba(0,0,0,.16)
+),
+url("/dsr/dsr-banner.jpg");
+
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+
+display:flex;
+align-items:center;
 }
 
-.page-title h2{
-font-size:42px;
-color:#083b66;
-margin-bottom:12px;
-}
-
-.page-title p{
-font-size:18px;
-color:#666;
-max-width:750px;
+.page-hero-inner{
+width:90%;
+max-width:1200px;
 margin:auto;
+
+display:flex;
+justify-content:flex-end;
+align-items:center;
 }
 
-/* ================= ARCHIVES ================= */
+.page-hero h1{
+color:#fff;
+font-size:54px;
+font-weight:500;
+letter-spacing:.5px;
 
-.archives-section{
-padding:60px 0 80px;
+text-shadow:
+0 2px 8px rgba(0,0,0,.45);
 }
 
-.issue-grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:24px;
+/* ================= ARCHIVE SECTION ================= */
+
+.archive-section{
+padding:65px 0 75px;
 }
 
-.issue-card{
-background:#ffffff;
-border-radius:10px;
-box-shadow:0 4px 14px rgba(0,0,0,.08);
-overflow:hidden;
-transition:.25s;
-border-top:5px solid #083b66;
+.section-heading{
+text-align:center;
+margin-bottom:45px;
 }
 
-.issue-card:hover{
-transform:translateY(-4px);
-box-shadow:0 8px 20px rgba(0,0,0,.12);
-}
-
-.issue-content{
-padding:28px 30px;
-}
-
-.issue-label{
-font-size:14px;
-font-weight:bold;
-text-transform:uppercase;
-letter-spacing:.7px;
-color:#6d7782;
+.section-heading h2{
+font-size:34px;
+color:#083b66;
 margin-bottom:8px;
 }
 
-.issue-card h3{
-font-size:24px;
-margin-bottom:12px;
+.section-heading p{
+font-size:16px;
+color:#667788;
 }
 
-.issue-card h3 a{
+/* ================= ARCHIVE GRID ================= */
+
+.archive-grid{
+display:grid;
+grid-template-columns:
+repeat(2,minmax(0,1fr));
+gap:26px;
+}
+
+/* ================= ARCHIVE CARD ================= */
+
+.archive-card{
+background:#fff;
+border-radius:10px;
+padding:28px 30px;
+
+border-top:4px solid #0b5a87;
+
+box-shadow:
+0 4px 15px rgba(0,0,0,.07);
+
+transition:
+transform .2s ease,
+box-shadow .2s ease;
+}
+
+.archive-card:hover{
+transform:translateY(-3px);
+
+box-shadow:
+0 8px 22px rgba(0,0,0,.10);
+}
+
+/* ================= VOLUME ================= */
+
+.volume-number{
+display:inline-block;
+
+background:#eaf3f9;
+color:#0b5a87;
+
+font-size:13px;
+font-weight:bold;
+
+padding:5px 11px;
+
+border-radius:20px;
+
+margin-bottom:14px;
+}
+
+.archive-card h3{
+font-size:22px;
+line-height:1.4;
+margin-bottom:10px;
+}
+
+.archive-card h3 a{
 color:#083b66;
 text-decoration:none;
 }
 
-.issue-card h3 a:hover{
+.archive-card h3 a:hover{
 text-decoration:underline;
 }
 
+/* ================= ISSUE INFO ================= */
+
 .issue-period{
-font-size:16px;
-color:#444;
+font-size:15px;
+color:#555;
 margin-bottom:6px;
 }
 
-.issue-published{
-font-size:15px;
-color:#666;
+.publication-date{
+font-size:14px;
+color:#667788;
 margin-bottom:20px;
 }
 
+.publication-date strong{
+color:#333;
+}
+
+/* ================= VIEW ISSUE BUTTON ================= */
+
 .view-issue{
 display:inline-block;
-padding:10px 20px;
-background:#083b66;
-color:#ffffff;
+
+padding:10px 18px;
+
+background:#0b5a87;
+color:#fff;
+
 text-decoration:none;
-border-radius:5px;
+
+font-size:14px;
 font-weight:bold;
+
+border-radius:5px;
 }
 
 .view-issue:hover{
-background:#0d5b97;
+background:#083b66;
 }
 
 /* ================= FOOTER ================= */
 
 footer{
 background:#083b66;
-color:#ffffff;
+color:#fff;
 padding:40px 0;
 text-align:center;
 }
 
-footer img{
-width:70px;
-margin-bottom:15px;
+.footer-content img{
+width:65px;
+margin-bottom:12px;
 }
 
-footer h3{
-margin-bottom:8px;
+.footer-content h3{
+margin-bottom:7px;
 }
 
-footer p{
+.footer-description{
 font-size:14px;
-opacity:.9;
+margin-bottom:7px;
+}
+
+.footer-publisher,
+.footer-copyright{
+font-size:14px;
+opacity:.92;
 }
 
 /* ================= RESPONSIVE ================= */
 
-@media(max-width:800px){
+@media(max-width:900px){
 
-.page-title h2{
-font-size:34px;
+.page-hero{
+height:300px;
 }
 
-.issue-grid{
+.page-hero h1{
+font-size:44px;
+}
+
+.archive-grid{
 grid-template-columns:1fr;
+}
+
+}
+
+@media(max-width:600px){
+
+.page-hero{
+height:230px;
+background-position:center;
+}
+
+.page-hero-inner{
+justify-content:center;
+}
+
+.page-hero h1{
+font-size:36px;
+}
+
+.archive-section{
+padding:45px 0 55px;
+}
+
+.section-heading h2{
+font-size:28px;
+}
+
+.archive-card{
+padding:24px 22px;
+}
+
+.archive-card h3{
+font-size:20px;
 }
 
 }
@@ -178,21 +303,19 @@ grid-template-columns:1fr;
 
 <body>
 
+<!-- ================= MASTER HEADER ================= -->
+
 <div id="site-header"></div>
 
-<!-- ================= PAGE TITLE ================= -->
+<!-- ================= PAGE HERO ================= -->
 
-<section class="page-title">
+<section class="page-hero">
 
-<div class="container">
+<div class="page-hero-inner">
 
-<h2>
+<h1>
 Archives
-</h2>
-
-<p>
-Browse all published volumes and issues of Digitalization &amp; Sustainability Review.
-</p>
+</h1>
 
 </div>
 
@@ -200,220 +323,227 @@ Browse all published volumes and issues of Digitalization &amp; Sustainability R
 
 <!-- ================= ARCHIVES ================= -->
 
-<section class="archives-section">
+<section class="archive-section">
 
 <div class="container">
 
-<div class="issue-grid">
+<div class="section-heading">
 
-<!-- Volume 6 -->
+<h2>
+Journal Archives
+</h2>
 
-<div class="issue-card">
+<p>
+Browse published volumes and issues of Digitalization &amp; Sustainability Review.
+</p>
 
-<div class="issue-content">
-
-<div class="issue-label">
-Latest Issue
 </div>
 
+<div class="archive-grid">
+
+<!-- ================= VOLUME 6 ================= -->
+
+<article class="archive-card">
+
+<span class="volume-number">
+Volume 6
+</span>
+
 <h3>
-<a href="issues/v6n1/">
+
+<a href="/dsr/issues/v6n1/">
 Volume 6, Number 1/2026
 </a>
+
 </h3>
 
 <p class="issue-period">
-<strong>Coverage:</strong> January – December 2026
+January – December 2026
 </p>
 
-<p class="issue-published">
-Published: January 2026
+<p class="publication-date">
+<strong>Published:</strong> January 2026
 </p>
 
 <a
-href="issues/v6n1/"
-class="view-issue">
+class="view-issue"
+href="/dsr/issues/v6n1/">
+
 View Issue
+
 </a>
 
-</div>
+</article>
 
-</div>
+<!-- ================= VOLUME 5 ================= -->
 
+<article class="archive-card">
 
-<!-- Volume 5 -->
-
-<div class="issue-card">
-
-<div class="issue-content">
-
-<div class="issue-label">
+<span class="volume-number">
 Volume 5
-</div>
+</span>
 
 <h3>
-<a href="issues/v5n1/">
+
+<a href="/dsr/issues/v5n1/">
 Volume 5, Number 1/2025
 </a>
+
 </h3>
 
 <p class="issue-period">
-<strong>Coverage:</strong> January – December 2025
+January – December 2025
 </p>
 
-<p class="issue-published">
-Published: January 2025
+<p class="publication-date">
+<strong>Published:</strong> January 2025
 </p>
 
 <a
-href="issues/v5n1/"
-class="view-issue">
+class="view-issue"
+href="/dsr/issues/v5n1/">
+
 View Issue
+
 </a>
 
-</div>
+</article>
 
-</div>
+<!-- ================= VOLUME 4 ================= -->
 
+<article class="archive-card">
 
-<!-- Volume 4 -->
-
-<div class="issue-card">
-
-<div class="issue-content">
-
-<div class="issue-label">
+<span class="volume-number">
 Volume 4
-</div>
+</span>
 
 <h3>
-<a href="issues/v4n1/">
+
+<a href="/dsr/issues/v4n1/">
 Volume 4, Number 1/2024
 </a>
+
 </h3>
 
 <p class="issue-period">
-<strong>Coverage:</strong> January – December 2024
+January – December 2024
 </p>
 
-<p class="issue-published">
-Published: January 2024
+<p class="publication-date">
+<strong>Published:</strong> January 2024
 </p>
 
 <a
-href="issues/v4n1/"
-class="view-issue">
+class="view-issue"
+href="/dsr/issues/v4n1/">
+
 View Issue
+
 </a>
 
-</div>
+</article>
 
-</div>
+<!-- ================= VOLUME 3 ================= -->
 
+<article class="archive-card">
 
-<!-- Volume 3 -->
-
-<div class="issue-card">
-
-<div class="issue-content">
-
-<div class="issue-label">
+<span class="volume-number">
 Volume 3
-</div>
+</span>
 
 <h3>
-<a href="issues/v3n1/">
+
+<a href="/dsr/issues/v3n1/">
 Volume 3, Number 1/2023
 </a>
+
 </h3>
 
 <p class="issue-period">
-<strong>Coverage:</strong> January – December 2023
+January – December 2023
 </p>
 
-<p class="issue-published">
-Published: January 2023
+<p class="publication-date">
+<strong>Published:</strong> January 2023
 </p>
 
 <a
-href="issues/v3n1/"
-class="view-issue">
+class="view-issue"
+href="/dsr/issues/v3n1/">
+
 View Issue
+
 </a>
 
-</div>
+</article>
 
-</div>
+<!-- ================= VOLUME 2 ================= -->
 
+<article class="archive-card">
 
-<!-- Volume 2 -->
-
-<div class="issue-card">
-
-<div class="issue-content">
-
-<div class="issue-label">
+<span class="volume-number">
 Volume 2
-</div>
+</span>
 
 <h3>
-<a href="issues/v2n1/">
+
+<a href="/dsr/issues/v2n1/">
 Volume 2, Number 1/2022
 </a>
+
 </h3>
 
 <p class="issue-period">
-<strong>Coverage:</strong> January – December 2022
+January – December 2022
 </p>
 
-<p class="issue-published">
-Published: January 2022
+<p class="publication-date">
+<strong>Published:</strong> January 2022
 </p>
 
 <a
-href="issues/v2n1/"
-class="view-issue">
+class="view-issue"
+href="/dsr/issues/v2n1/">
+
 View Issue
+
 </a>
 
-</div>
+</article>
 
-</div>
+<!-- ================= VOLUME 1 ================= -->
 
+<article class="archive-card">
 
-<!-- Volume 1 -->
-
-<div class="issue-card">
-
-<div class="issue-content">
-
-<div class="issue-label">
+<span class="volume-number">
 Volume 1
-</div>
+</span>
 
 <h3>
-<a href="issues/v1n1/">
+
+<a href="/dsr/issues/v1n1/">
 Volume 1, Number 1/2021
 </a>
+
 </h3>
 
 <p class="issue-period">
-<strong>Coverage:</strong> January – December 2021
+January – December 2021
 </p>
 
-<p class="issue-published">
-Published: January 2021
+<p class="publication-date">
+<strong>Published:</strong> January 2021
 </p>
 
 <a
-href="issues/v1n1/"
-class="view-issue">
+class="view-issue"
+href="/dsr/issues/v1n1/">
+
 View Issue
+
 </a>
 
-</div>
-
-</div>
+</article>
 
 </div>
 
@@ -427,32 +557,39 @@ View Issue
 
 <div class="container">
 
+<div class="footer-content">
+
 <img
-src="dsr-logo.png"
-alt="Digitalization &amp; Sustainability Review Logo">
+src="/dsr/dsr-logo.png"
+alt="Digitalization & Sustainability Review Logo">
 
 <h3>
 Digitalization &amp; Sustainability Review
 </h3>
 
-<p>
+<p class="footer-description">
 An International Peer-Reviewed Open Access Journal
 </p>
 
-<p style="margin-top:8px;">
+<p class="footer-publisher">
 Published by Upright Publications
 </p>
 
-<p style="margin-top:8px;">
-&copy; 2026 Digitalization &amp; Sustainability Review. All Rights Reserved.
+<p class="footer-copyright">
+&copy; 2026 Digitalization &amp; Sustainability Review.
+All Rights Reserved.
 </p>
+
+</div>
 
 </div>
 
 </footer>
 
-<script src="assets/js/header-loader.js"></script>
-<script src="assets/js/header-search.js"></script>
+<!-- ================= MASTER HEADER JS ================= -->
+
+<script src="/dsr/assets/js/header-search.js"></script>
+<script src="/dsr/assets/js/header-loader.js"></script>
 
 </body>
 
