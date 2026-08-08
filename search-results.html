@@ -6,22 +6,34 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="icon" type="image/png" href="assets/images/up-fevicon.png">
-
 <title>Search Results | Upright Publications</title>
+
+<link rel="stylesheet" href="assets/css/header.css">
 
 <style>
 
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
 body{
 font-family:Arial,Helvetica,sans-serif;
-margin:0;
-background:#f7f7f7;
+background:#f6f8fb;
+color:#333;
+line-height:1.7;
 }
 
 .container{
-max-width:1100px;
-margin:50px auto;
-padding:0 20px;
+width:90%;
+max-width:1200px;
+margin:auto;
+}
+
+.search-section{
+padding:60px 0;
+min-height:500px;
 }
 
 .search-box{
@@ -30,56 +42,70 @@ margin-bottom:40px;
 
 .search-box form{
 display:flex;
-gap:10px;
+gap:12px;
 }
 
 .search-box input{
 flex:1;
-padding:16px;
+padding:16px 18px;
 font-size:17px;
 border:1px solid #ccc;
-border-radius:6px;
+border-radius:7px;
 outline:none;
 }
 
+.search-box input:focus{
+border-color:#083b66;
+}
+
 .search-box button{
-padding:16px 30px;
-background:#0a3b63;
-color:white;
+padding:16px 32px;
 border:none;
-border-radius:6px;
-cursor:pointer;
+border-radius:7px;
+background:#083b66;
+color:#fff;
+font-size:16px;
 font-weight:bold;
+cursor:pointer;
 }
 
 .search-box button:hover{
-background:#145b92;
+background:#0d5b97;
 }
 
 #result-count{
-margin:20px 0 30px;
-font-size:18px;
-color:#444;
+font-size:19px;
 font-weight:bold;
+margin-bottom:30px;
 }
 
 .result{
-background:white;
-padding:25px;
-margin-bottom:25px;
-border-radius:8px;
+background:#fff;
+padding:26px 28px;
+margin-bottom:24px;
+border-radius:9px;
 box-shadow:0 3px 10px rgba(0,0,0,.08);
 }
 
-.result h2{
-margin-top:0;
+.result-journal{
+display:inline-block;
+font-size:13px;
+font-weight:bold;
+background:#e8eef6;
+color:#083b66;
+padding:5px 10px;
+border-radius:15px;
 margin-bottom:12px;
-font-size:24px;
+}
+
+.result h2{
+font-size:23px;
+margin-bottom:10px;
 }
 
 .result h2 a{
+color:#083b66;
 text-decoration:none;
-color:#0a3b63;
 }
 
 .result h2 a:hover{
@@ -87,53 +113,68 @@ text-decoration:underline;
 }
 
 .meta{
-color:#666;
 font-size:15px;
-margin-bottom:15px;
+color:#666;
+margin-bottom:12px;
+}
+
+.authors{
+font-size:16px;
+font-weight:bold;
+margin-bottom:12px;
 }
 
 .abstract{
-line-height:1.7;
+font-size:16px;
 color:#444;
 margin-bottom:18px;
 }
 
 .read-btn{
 display:inline-block;
-padding:10px 20px;
-background:#0a3b63;
-color:white;
+padding:9px 18px;
+background:#083b66;
+color:#fff;
 text-decoration:none;
 border-radius:5px;
 font-weight:bold;
 }
 
 .read-btn:hover{
-background:#145b92;
-}
-
-footer{
-margin-top:80px;
-background:#222;
-color:white;
-padding:25px;
-text-align:center;
+background:#0d5b97;
 }
 
 .no-results{
-background:white;
+display:none;
+background:#fff;
 padding:40px;
 border-radius:8px;
 text-align:center;
-font-size:20px;
+font-size:19px;
 color:#666;
-display:none;
+}
+
+footer{
+background:#083b66;
+color:#fff;
+padding:35px 0;
+text-align:center;
+margin-top:60px;
+}
+
+@media(max-width:800px){
+
+.search-box form{
+flex-direction:column;
+}
+
+.search-box button{
+width:100%;
+}
+
 }
 
 </style>
-
-<link rel="stylesheet" href="assets/css/header.css">
-<link rel="stylesheet" href="assets/css/header-search.css">
 
 </head>
 
@@ -141,23 +182,23 @@ display:none;
 
 <div id="site-header"></div>
 
+<section class="search-section">
+
 <div class="container">
 
 <div class="search-box">
 
-<form id="searchForm">
+<form action="/search-results.html" method="GET">
 
 <input
 type="search"
 id="searchInput"
 name="q"
-placeholder="Search articles, authors, keywords..."
+placeholder="Search all journals, articles, authors, years..."
 required>
 
 <button type="submit">
-
 Search
-
 </button>
 
 </form>
@@ -169,21 +210,278 @@ Search
 <div id="results"></div>
 
 <div id="no-results" class="no-results">
-
-No matching articles were found.
-
+No matching results were found.
 </div>
 
 </div>
+
+</section>
 
 <footer>
 
-© 2026 Upright Publications
+<p>
+&copy; 2026 Upright Publications. All Rights Reserved.
+</p>
 
 </footer>
 
-<script src="assets/js/search.js"></script>
-<script src="assets/js/header-loader.js"></script>
+<script src="/assets/js/header-loader.js"></script>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", async function () {
+
+    const searchInput =
+        document.getElementById("searchInput");
+
+    const resultsContainer =
+        document.getElementById("results");
+
+    const resultCount =
+        document.getElementById("result-count");
+
+    const noResults =
+        document.getElementById("no-results");
+
+    const params =
+        new URLSearchParams(window.location.search);
+
+    const query =
+        (params.get("q") || "").trim();
+
+    searchInput.value = query;
+
+    if (!query) {
+
+        resultCount.textContent =
+            "Enter a keyword to search Upright Publications.";
+
+        return;
+
+    }
+
+    try {
+
+        const response = await fetch(
+            "/assets/search-index.json",
+            {
+                cache:"no-store"
+            }
+        );
+
+        if (!response.ok) {
+            throw new Error("Global search index could not be loaded.");
+        }
+
+        const searchData =
+            await response.json();
+
+        const searchWords =
+            query
+            .toLowerCase()
+            .split(/\s+/)
+            .filter(Boolean);
+
+        const results =
+            searchData.filter(function(item){
+
+                const searchableText = [
+
+                    item.journal,
+                    item.journal_code,
+                    item.title,
+                    item.authors,
+                    item.keywords,
+                    item.abstract,
+                    item.volume,
+                    item.issue,
+                    item.year,
+                    item.pages,
+                    item.doi,
+                    item.type
+
+                ]
+                .join(" ")
+                .toLowerCase();
+
+                return searchWords.every(function(word){
+
+                    return searchableText.includes(word);
+
+                });
+
+            });
+
+        renderResults(results, query);
+
+    }
+
+    catch(error){
+
+        console.error(error);
+
+        resultCount.textContent =
+            "Global search index is temporarily unavailable.";
+
+    }
+
+
+    function renderResults(results, keyword){
+
+        resultsContainer.innerHTML = "";
+
+        if(results.length === 0){
+
+            resultCount.textContent =
+                '0 result(s) found for "' +
+                keyword +
+                '".';
+
+            noResults.style.display = "block";
+
+            return;
+
+        }
+
+        noResults.style.display = "none";
+
+        resultCount.textContent =
+            results.length +
+            ' result(s) found for "' +
+            keyword +
+            '".';
+
+
+        results.forEach(function(item){
+
+            const card =
+                document.createElement("article");
+
+            card.className = "result";
+
+
+            if(item.journal){
+
+                const journal =
+                    document.createElement("div");
+
+                journal.className =
+                    "result-journal";
+
+                journal.textContent =
+                    item.journal_code
+                    ? item.journal_code + " • " + item.journal
+                    : item.journal;
+
+                card.appendChild(journal);
+
+            }
+
+
+            const title =
+                document.createElement("h2");
+
+            const link =
+                document.createElement("a");
+
+            link.href = item.url;
+            link.textContent = item.title;
+
+            title.appendChild(link);
+            card.appendChild(title);
+
+
+            const meta =
+                document.createElement("div");
+
+            meta.className = "meta";
+
+            const metaParts = [];
+
+            if(item.type){
+                metaParts.push(item.type);
+            }
+
+            if(item.volume){
+                metaParts.push(
+                    "Volume " + item.volume
+                );
+            }
+
+            if(item.issue){
+                metaParts.push(
+                    "Issue " + item.issue
+                );
+            }
+
+            if(item.year){
+                metaParts.push(item.year);
+            }
+
+            if(item.pages){
+                metaParts.push(
+                    "Pages " + item.pages
+                );
+            }
+
+            meta.textContent =
+                metaParts.join(" • ");
+
+            card.appendChild(meta);
+
+
+            if(item.authors){
+
+                const authors =
+                    document.createElement("div");
+
+                authors.className = "authors";
+
+                authors.textContent =
+                    item.authors.replaceAll(";", ",");
+
+                card.appendChild(authors);
+
+            }
+
+
+            if(item.abstract){
+
+                const abstract =
+                    document.createElement("div");
+
+                abstract.className = "abstract";
+
+                abstract.textContent =
+                    item.abstract;
+
+                card.appendChild(abstract);
+
+            }
+
+
+            const openButton =
+                document.createElement("a");
+
+            openButton.className = "read-btn";
+            openButton.href = item.url;
+
+            openButton.textContent =
+                item.type === "article"
+                ? "View Article"
+                : "Open Page";
+
+            card.appendChild(openButton);
+
+            resultsContainer.appendChild(card);
+
+        });
+
+    }
+
+});
+
+</script>
 
 </body>
 
